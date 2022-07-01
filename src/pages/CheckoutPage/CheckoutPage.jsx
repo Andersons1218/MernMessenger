@@ -1,6 +1,6 @@
 import * as userService from '../../utilities/users-service'
 
-export default function OrderHistoryPage(props) {
+export default function CheckoutPage(props) {
 
     async function handleCheckToken(){
        const expDate = await userService.checkToken()
