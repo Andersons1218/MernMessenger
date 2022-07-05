@@ -6,17 +6,20 @@ import CheckoutPage from '../CheckoutPage/CheckoutPage'
 import { Routes, Route } from 'react-router-dom'
 import NavBar from '../../components/NavBar'
 import { getUser } from '../../utilities/users-service'
+import * as allPackages from '../../../models/package'
 
 export default function App() {
   const [user, setUser] = useState(getUser())
+
   return (
     <main className="App">
       {user ?
       <>
           <NavBar user={user} setUser={setUser} />
           <Routes>
-            <Route path="/package" element={<BookingPage />} />
-            <Route path="/package/checkout" element={<CheckoutPage />} />
+
+            <Route path="/booking" element={<BookingPage Packages={allPackages}  />} />
+            <Route path="/booking/checkout" element={<CheckoutPage />} />
           </Routes>
       </>
       :
