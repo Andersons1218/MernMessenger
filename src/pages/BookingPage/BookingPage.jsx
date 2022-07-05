@@ -1,3 +1,4 @@
+import PackageDetail from "../../components/PackageDetail/PackageDetail"
 import PackageList from "../../components/PackageList/PackageList"
 
 export default function BookingPage(){
@@ -11,8 +12,9 @@ export default function BookingPage(){
     return(
         <main className="NewOrderPage">
         <aside>  
-          <PackageList />
+        <PackageList />
         </aside>
+        <PackageDetail/>
         
       </main>
     )
