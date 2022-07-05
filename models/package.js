@@ -1,4 +1,5 @@
-const Schema = require('mongoose').Schema;
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
 const packageSchema = new Schema({
 location: String ,
@@ -17,4 +18,4 @@ user: { type: Schema.Types.ObjectId, ref: 'User' },
   timestamps: true
 });
 
-module.exports = packageSchema; 
+module.exports = mongoose.model('Package', packageSchema); 
