@@ -1,20 +1,16 @@
 import PackageDetail from "../../components/PackageDetail/PackageDetail"
 import PackageList from "../../components/PackageList/PackageList"
 
-export default function BookingPage(){
 
-    async function handleCheckout() {
-        await ordersAPI.checkout();
-        navigate('/orders');
-      }
 
+export default function BookingPage({Packages}){
 
     return(
         <main className="NewOrderPage">
         <aside>  
         <PackageList />
         </aside>
-        <PackageDetail/>
+        <PackageDetail Packages={Packages}/>
         
       </main>
     )
