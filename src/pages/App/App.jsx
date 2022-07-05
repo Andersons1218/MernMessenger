@@ -10,6 +10,7 @@ import PackageDetail from '../../components/PackageDetail/PackageDetail';
 
 export default function App() {
   const [user, setUser] = useState(getUser())
+
   return (
     <main className="App">
       {user ?
@@ -17,6 +18,7 @@ export default function App() {
           <NavBar user={user} setUser={setUser} />
           <Routes>
             <Route path="/booking" element={<BookingPage Packages={selectedPackage}  />} />
+
             <Route path="/booking/checkout" element={<CheckoutPage />} />
           </Routes>
       </>
