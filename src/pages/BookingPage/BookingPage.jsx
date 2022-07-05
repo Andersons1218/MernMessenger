@@ -51,7 +51,7 @@ export default function BookingPage({ user, setUser }){
       <aside>
         
          <PackageList
-          packages={selectedpackage.current}
+          // packages={selectedpackage.current}
           activeCat={activeCat}
           setActiveCat={setActiveCat}
         /> 

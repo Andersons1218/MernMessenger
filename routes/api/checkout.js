@@ -3,7 +3,7 @@ const router = express.Router();
 const checkCtrl = require('../../controllers/api/checkout');
 
 // GET /api/orders/cart
-router.get('/cart', ordesCtrl.cart);
+router.get('/cart', checkCtrl.cart);
 // POST /api/orders/cart/items/:id
 router.post('/cart/packages/:id', checkCtrl.addToCart);
 // POST /api/orders/cart/checkout
