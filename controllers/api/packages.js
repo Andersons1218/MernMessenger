@@ -2,7 +2,11 @@ const Checkout = require('../../models/checkout');
 const Package = require('../../models/packages');
 
 module.exports = {
+<<<<<<< HEAD
     index,
+=======
+   index,
+>>>>>>> main
   show
 };
 
