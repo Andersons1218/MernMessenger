@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import PackageList from '../../components/PackageList/PackageList'
 import PackageDetail from "../../components/PackageDetail/PackageDetail"
@@ -9,15 +9,10 @@ import * as ordersAPI from '../../utilities/orders-api';
 
 
 export default function BookingPage({ user, setUser }){
-  const [packages, setPackages] = useState([]);
+  const [packages, setPackage] = useState([]);
   const [activeCat, setActiveCat] = useState('');
   const [cart, setCart] = useState(null);
-  // Obtain a ref object
   
-
-  // useEffect(function() {
-  //   console.log('NewOrderPage rendered');
-  // });
   
   useEffect(function() {
     async function getItems() {
@@ -33,21 +28,44 @@ export default function BookingPage({ user, setUser }){
     }
     getCart();
   }, []);
-  // the empty dependency array above will result in 
-  // the function running after the FIRST render
-  // only
+  async function handleAddToOrder(itemId) {
+    // 1. Call the addItemToCart function in ordersAPI, passing to it the itemId, and assign the resolved promise to a variable named cart.
+    const updatedCart = await ordersAPI.addItemToCart(itemId);
+    // 2. Update the cart state with the updated cart received from the server
+    setCart(updatedCart);
+  }
+
+  async function handleChangeQty(itemId, newQty) {
+    const updatedCart = await ordersAPI.setItemQtyInCart(itemId, newQty);
+    setCart(updatedCart);
+  }
+
+  async function handleCheckout() {
+    await ordersAPI.checkout();
+    //navigate('/checkout');
+  }
 
   return (
     <main className="NewOrderPage">
       <aside>
-    
-        <Link to="/orders" className="button btn-sm">PREVIOUS ORDERS</Link>
-        {/* <UserLogOut user={user} setUser={setUser} /> */}
+        
+        <PackageList
+          packages={selectedpackage.current}
+          activeCat={activeCat}
+          setActiveCat={setActiveCat}
+        />
+        <Link to="/booking" className="button btn-sm">PREVIOUS ORDERS</Link>
+        <UserLogOut user={user} setUser={setUser} />
       </aside>
-      <PackageList
+      <PackageListItem
         packages={packages.filter(item => item.category.name === activeCat)}
+        handleAddToOrder={handleAddToOrder}
       />
-      <PackageDetail order={cart} />
+      <PackageDetail
+        order={cart}
+        handleChangeQty={handleChangeQty}
+        handleCheckout={handleCheckout}
+      />
     </main>
   );
 }
