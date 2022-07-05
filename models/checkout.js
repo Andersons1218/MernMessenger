@@ -1,5 +1,6 @@
-//const packageSchema = require('./package');
+
 const Schema = require('mongoose').Schema;
+const mongoose = require('mongoose')
 
 const checkoutSchema = new Schema({
   Price: Number,
