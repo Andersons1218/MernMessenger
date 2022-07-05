@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom'
-
+import PackageListItem from '../PackageListItem/PackageListItem';
 
 export default function PackageDetail({Packages}) {
     
@@ -9,6 +9,7 @@ export default function PackageDetail({Packages}) {
 
   return (
       <>
+      <PackageListItem package={selectedPackage} />
      <h1>Package Details:</h1>
      <h2>{selectedPackage.location}</h2>
      <p>Hotel: {selectedPackage.hotel}<br/>

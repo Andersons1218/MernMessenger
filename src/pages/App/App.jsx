@@ -10,6 +10,7 @@ import * as allPackages from '../../../models/package'
 
 export default function App() {
   const [user, setUser] = useState(getUser())
+
   return (
     <main className="App">
       {user ?
@@ -18,7 +19,7 @@ export default function App() {
           <Routes>
 
             <Route path="/booking" element={<BookingPage Packages={allPackages}  />} />
-            <Route path="/booking/checkout" element={<CheckoutPage />} /
+            <Route path="/booking/checkout" element={<CheckoutPage />} />
           </Routes>
       </>
       :
