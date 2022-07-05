@@ -1,7 +1,8 @@
+const Checkout = require('../../models/checkout');
 const Package = require('../../models/packages');
 
 module.exports = {
-//   index,
+   index,
   show
 };
 
