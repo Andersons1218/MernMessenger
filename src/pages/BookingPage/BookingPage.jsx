@@ -5,9 +5,9 @@ export default function BookingPage(){
     return(
         <main className="NewOrderPage">
         <aside>  
-          <PackageList />
+        <PackageList />
         </aside>
-         <PackageDetail/>
+        <PackageDetail/>
         
       </main>
     )

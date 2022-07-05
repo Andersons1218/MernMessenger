@@ -1,6 +1,6 @@
 const Schema = require('mongoose').Schema;
 
-const bookingSchema = new Schema({
+const packageSchema = new Schema({
 location: String ,
 hotel: String,
 rating: String,
@@ -17,4 +17,4 @@ user: { type: Schema.Types.ObjectId, ref: 'User' },
   timestamps: true
 });
 
-module.exports = bookingSchema; 
+module.exports = packageSchema; 

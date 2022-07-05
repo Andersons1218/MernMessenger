@@ -1,6 +1,8 @@
+import PackageListItem from "../PackageListItem/PackageListItem";
+
 export default function PackageList() {
     return (
-     <h1>Package List</h1>
+     <PackageListItem />
     );
   }
 
