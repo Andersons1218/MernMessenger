@@ -6,7 +6,7 @@ import PackageList from "../../components/PackageList/PackageList"
 export default function BookingPage({Packages}){
 
     return(
-        <main className="NewOrderPage">
+        <main className="BookingPage">
         <aside>  
         <PackageList />
         </aside>
