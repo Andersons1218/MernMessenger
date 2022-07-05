@@ -1,3 +1,8 @@
+require('dotenv').config();
+require('./config/database');
+
+
+
 const packages =[
     {location: 'Puerto Rico',
     hotel: 'Mariott Condado Hotel',
