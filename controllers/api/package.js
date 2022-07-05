@@ -1,5 +1,5 @@
 const Checkout = require('../../models/checkout');
-const Package = require('../../models/packages');
+const Package = require('../../models/package');
 
 module.exports = {
    index,
