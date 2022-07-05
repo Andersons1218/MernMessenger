@@ -16,8 +16,9 @@ export default function App() {
       <>
           <NavBar user={user} setUser={setUser} />
           <Routes>
+
             <Route path="/booking" element={<BookingPage Packages={allPackages}  />} />
-            <Route path="/booking/checkout" element={<CheckoutPage />} />
+            <Route path="/booking/checkout" element={<CheckoutPage />} /
           </Routes>
       </>
       :
