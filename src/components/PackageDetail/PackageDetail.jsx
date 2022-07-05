@@ -1,11 +1,12 @@
 import { useParams } from 'react-router-dom'
 import PackageListItem from '../PackageListItem/PackageListItem';
+import Package from '../../models/package'
 
 export default function PackageDetail() {
   
 let { packageId } = useParams()
 
-  let selectedPackage = Package.find(pkg => pkg.location === movieId)
+  let selectedPackage = Package.find(pkg => pkg.location === packageId)
   
   return (  
     <>

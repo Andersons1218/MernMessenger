@@ -9,7 +9,7 @@ import * as ordersAPI from '../../utilities/orders-api';
 
 
 export default function BookingPage({ user, setUser }){
-  const [packages, setPackage] = useState([]);
+  const [packages, setPackages] = useState([]);
   const [activeCat, setActiveCat] = useState('');
   const [cart, setCart] = useState(null);
   
@@ -17,7 +17,8 @@ export default function BookingPage({ user, setUser }){
   useEffect(function() {
     async function getItems() {
       const packages = await packageAPI.getAll();
-    //   setMenuItems(items);
+      console.log(packages)
+      setPackages(packages);
     }
     getItems();
 
@@ -49,13 +50,13 @@ export default function BookingPage({ user, setUser }){
     <main className="NewOrderPage">
       <aside>
         
-        <PackageList
+         <PackageList
           packages={selectedpackage.current}
           activeCat={activeCat}
           setActiveCat={setActiveCat}
-        />
+        /> 
         <Link to="/booking" className="button btn-sm">PREVIOUS ORDERS</Link>
-        <UserLogOut user={user} setUser={setUser} />
+        {/* <UserLogOut user={user} setUser={setUser} /> */}
       </aside>
       <PackageListItem
         packages={packages.filter(item => item.category.name === activeCat)}
