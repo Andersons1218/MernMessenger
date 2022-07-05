@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import PackageList from '../../components/PackageList/PackageList'
 import PackageDetail from "../../components/PackageDetail/PackageDetail"
 import PackageListItem from "../../components/PackageListItem/PackageListItem"
-import * as itemsAPI from '../../utilities/items-api';
+import * as packageAPI from '../../utilities/packages-api';
 import * as ordersAPI from '../../utilities/orders-api';
 
 
@@ -13,7 +13,7 @@ export default function BookingPage({ user, setUser }){
   const [activeCat, setActiveCat] = useState('');
   const [cart, setCart] = useState(null);
   // Obtain a ref object
-  const categoriesRef = useRef([]);
+  
 
   // useEffect(function() {
   //   console.log('NewOrderPage rendered');
@@ -21,13 +21,8 @@ export default function BookingPage({ user, setUser }){
   
   useEffect(function() {
     async function getItems() {
-      const items = await itemsAPI.getAll();
-      categoriesRef.current = items.reduce((cats, item) => {
-        const cat = item.category.name;
-        return cats.includes(cat) ? cats : [...cats, cat]
-      }, []);
-      setActiveCat(categoriesRef.current[1]);
-      setMenuItems(items);
+      const packages = await packageAPI.getAll();
+    //   setMenuItems(items);
     }
     getItems();
 
@@ -45,11 +40,7 @@ export default function BookingPage({ user, setUser }){
   return (
     <main className="NewOrderPage">
       <aside>
-        <CategoryList
-          categories={categoriesRef.current}
-          activeCat={activeCat}
-          setActiveCat={setActiveCat}
-        />
+    
         <Link to="/orders" className="button btn-sm">PREVIOUS ORDERS</Link>
         {/* <UserLogOut user={user} setUser={setUser} /> */}
       </aside>
