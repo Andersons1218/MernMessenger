@@ -1,5 +1,4 @@
-const bookingSchema = require('./booking');
-
+//const packageSchema = require('./package');
 const Schema = require('mongoose').Schema;
 
 const checkoutSchema = new Schema({
@@ -8,5 +7,4 @@ const checkoutSchema = new Schema({
 });
 
 
-const Booking = model('Booking', bookingSchema)
-module.exports = checkoutSchema; 
+module.exports = mongoose.model('Checkout', checkoutSchema); 
