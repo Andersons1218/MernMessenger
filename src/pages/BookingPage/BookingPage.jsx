@@ -1,14 +1,16 @@
 import PackageDetail from "../../components/PackageDetail/PackageDetail"
 import PackageList from "../../components/PackageList/PackageList"
 
-export default function BookingPage(){
+
+
+export default function BookingPage({Packages}){
 
     return(
         <main className="BookingPage">
         <aside>  
         <PackageList />
         </aside>
-        <PackageDetail/>
+        <PackageDetail Packages={Packages}/>
         
       </main>
     )
