@@ -1,5 +1,12 @@
+import PackageList from "../../components/PackageList/PackageList"
+
 export default function BookingPage(){
     return(
-    <h1> New Booking </h1>
+        <main className="NewOrderPage">
+        <aside>  
+          <PackageList />
+        </aside>
+        
+      </main>
     )
 }
