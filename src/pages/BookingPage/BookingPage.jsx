@@ -40,11 +40,7 @@ export default function BookingPage({ user, setUser }){
   return (
     <main className="NewOrderPage">
       <aside>
-        <CategoryList
-          categories={categoriesRef.current}
-          activeCat={activeCat}
-          setActiveCat={setActiveCat}
-        />
+    
         <Link to="/orders" className="button btn-sm">PREVIOUS ORDERS</Link>
         {/* <UserLogOut user={user} setUser={setUser} /> */}
       </aside>
