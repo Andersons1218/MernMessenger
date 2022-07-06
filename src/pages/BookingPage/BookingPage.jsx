@@ -51,7 +51,7 @@ export default function BookingPage({ user, setUser }){
       <aside>
         
          <PackageList
-          // packages={selectedpackage.current}
+          //packages={selectedpackage.current}
           activeCat={activeCat}
           setActiveCat={setActiveCat}
         /> 
@@ -59,7 +59,7 @@ export default function BookingPage({ user, setUser }){
         {/* <UserLogOut user={user} setUser={setUser} /> */}
       </aside>
       <PackageListItem
-        packages={packages.filter(item => item.category.name === activeCat)}
+        packages={packages.filter()}
         handleAddToOrder={handleAddToOrder}
       />
       <PackageDetail
