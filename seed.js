@@ -49,7 +49,7 @@ const packages = await Package.create ([
     Date: "",
     Car: "Rail Pass",
     locaiton_img:
-      "https://www.planetware.com/wpimages/2020/01/puerto-rico-in-pictures-beautiful-places-to-photograph-san-juan.jpg",
+      "https://indiacsr.in/wp-content/uploads/2022/04/Ambassador-of-India-to-Japan-emphasized-the-need-to-further-enhance-the-strategic-partnership-of-both-the-countries.jpg",
     hotel_img:
       "https://passportsfromtheheart.com/wp-content/uploads/2018/10/Pink_Ribbon-Hilton-Athens-.jpg",
     flight_img:
@@ -81,7 +81,7 @@ const packages = await Package.create ([
     Date: "",
     Car: "Metro Card",
     locaiton_img:
-      "https://www.investopedia.com/thmb/Rl1yjHPvrmlgt0Fo-8qyyRC7b50=/3865x2579/filters:fill(auto,1)/getty-new-york-city-58b9db1f3df78c353c44bab3.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/NYC_Downtown_Manhattan_Skyline_seen_from_Paulus_Hook_2019-12-20_IMG_7347_FRD_%28cropped%29.jpg/1200px-NYC_Downtown_Manhattan_Skyline_seen_from_Paulus_Hook_2019-12-20_IMG_7347_FRD_%28cropped%29.jpg",
     hotel_img:
       "https://rew-online.com/wp-content/uploads/2016/12/dec28hotel217m-1-e1482357825138.jpg",
     flight_img: "https://s3-symbol-logo.tradingview.com/jetblue--600.png",
@@ -145,7 +145,7 @@ const packages = await Package.create ([
     Date: "",
     Car: "Jeep Wrangler",
     locaiton_img:
-      "https://lh3.googleusercontent.com/p/AF1QipNoBhKm6WuXIq-qQJDGR4vskZwJKxbF1cCDAULp=w296-h202-n-k-rw-no-v1",
+      "https://cdn.mos.cms.futurecdn.net/7YrobQvFFzw8aWsAUtoYXB.jpg",
     hotel_img:
       "https://lh3.googleusercontent.com/proxy/wFmWvQA7rEMfQxSclOMrmachUseSA59b8jZ-C7bslzPqQLY8KG736LFuN916avtoUq7131CU9E19-EIyecrncw3Ly0nYuRSX1d3frCdI_SCm9eDzUJ1DcIvEIuwJXFeo0UsAY_SLLiBpf_6DAB1vC9d56HUiGPw=w296-h202-n-k-rw-no-v1",
     flight_img: "https://s3-symbol-logo.tradingview.com/jetblue--600.png",
@@ -211,7 +211,7 @@ const packages = await Package.create ([
     Date: "",
     Car: "Honda",
     locaiton_img:
-      "https://www.planetware.com/wpimages/2020/01/puerto-rico-in-pictures-beautiful-places-to-photograph-san-juan.jpg",
+      "https://www.london.ac.uk/sites/default/files/styles/max_1300x1300/public/2018-10/london-aerial-cityscape-river-thames_1.jpg?itok=6LenFxuz",
     hotel_img:
       "https://lh3.googleusercontent.com/p/AF1QipNacv_2YTouNAPNpAtOSL8jFHTzxlsaGOWhutTf=w296-h202-n-k-rw-no-v1",
     flight_img: "https://s3-symbol-logo.tradingview.com/jetblue--600.png",
