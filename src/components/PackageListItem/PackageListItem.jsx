@@ -1,9 +1,9 @@
-export default function PackageListItem({packages}) {
-  
+export default function PackageListItem({pkg}) {
+  console.log(pkg)
     return (
       <>
-     <h1>{packages.location}</h1>
-     <h2>{packages.hotel}</h2>
+     <h1>{pkg.location}</h1>
+     <h2>{pkg.hotel}</h2>
      </>
     );
   }
