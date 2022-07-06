@@ -1,9 +1,6 @@
-export default function PackageListItem({packages}) {
+export default function PackageListItem() {
   
     return (
-      <>
-     <h1>{packages.location}</h1>
-     <h2>{packages.hotel}</h2>
-     </>
-    );
+    <h1>hi</h1>
+    )
   }

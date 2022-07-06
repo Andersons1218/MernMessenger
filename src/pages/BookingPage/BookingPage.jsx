@@ -58,14 +58,8 @@ export default function BookingPage({ user, setUser }){
         <Link to="/packages" className="button btn-sm">PREVIOUS ORDERS</Link>
         {/* <UserLogOut user={user} setUser={setUser} /> */}
       </aside>
-      <PackageListItem
-        packages={packages.filter()}
-        handleAddToOrder={handleAddToOrder}
-      />
+      <PackageListItem />
       <PackageDetail
-        order={cart}
-        handleChangeQty={handleChangeQty}
-        handleCheckout={handleCheckout}
       />
     </main>
   );

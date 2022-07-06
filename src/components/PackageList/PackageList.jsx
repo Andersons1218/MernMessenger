@@ -1,7 +1,7 @@
 import PackageListItem from "../PackageListItem/PackageListItem";
 
-export default function PackageList() {
-  const packages = packages.map(item =>
+export default function PackageList({packages , handleAddToOrder}) {
+  const packages = packages.map(packages =>
     <PackageListItem 
       key={packages._id}
       packages={packages}
@@ -10,7 +10,7 @@ export default function PackageList() {
   );
   return (
     <main>
-      {packages}
+      {/* {packages} */}
     </main>
   )
 }
