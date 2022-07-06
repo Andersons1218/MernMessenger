@@ -1,5 +1,5 @@
 export default function PackageListItem({pkg}) {
-  console.log(pkg)
+  
     return (
       <>
      <h1>{pkg.location}</h1>
