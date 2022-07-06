@@ -12,9 +12,9 @@ export default function NavBar({ user, setUser }) {
 }
     return(
         <nav>
-            <Link to="/booking">Booking</Link>
+            <Link to="/packages">Booking</Link>
             &nbsp; | &nbsp;
-            <Link to="/booking/checkout">Check out</Link>
+            <Link to="/packages/checkout">Check out</Link>
             &nbsp; | &nbsp;
             Welcome, { user.name }
             &nbsp; | &nbsp;

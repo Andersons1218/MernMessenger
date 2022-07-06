@@ -9,5 +9,5 @@ const Package = require('./models/package');
 const Checkout = require('./models/checkout');
 
 // Local variables will come in handy for holding retrieved documents
-let user, Package, category, order;
-let users, Packages, categories, orders;
+let user, Package, order;
+let users, Packages, orders;
