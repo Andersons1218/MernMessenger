@@ -55,6 +55,7 @@ export default function BookingPage({ user, setUser }){
       <div>
         <PackageDetail packages={packages}/>
       </div>
+
     </main>
   );
 }
