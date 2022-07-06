@@ -5,6 +5,7 @@ import PackageDetail from "../../components/PackageDetail/PackageDetail"
 import PackageListItem from "../../components/PackageListItem/PackageListItem"
 import * as packageAPI from '../../utilities/packages-api';
 import * as ordersAPI from '../../utilities/orders-api';
+import WeatherApi from '../../components/WeatherApi/WeatherApi'
 
 
 
@@ -12,6 +13,10 @@ export default function BookingPage({ user, setUser }){
   const [packages, setPackages] = useState([]);
   const [activeCat, setActiveCat] = useState('');
   const [cart, setCart] = useState(null);
+
+    const cityName = 'London'
+    const apiKey = 'b40659a94b9b6c0b7564f0015feec506'
+    const requestURL = `api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${apiKey}`
   
   useEffect(function() {
     async function getItems() {
@@ -27,7 +32,10 @@ export default function BookingPage({ user, setUser }){
       setCart(cart);
     }
     getCart();
+
   }, []);
+
+
   async function handleAddToOrder(itemId) {
     // 1. Call the addItemToCart function in ordersAPI, passing to it the itemId, and assign the resolved promise to a variable named cart.
     const updatedCart = await ordersAPI.addItemToCart(itemId);
@@ -45,6 +53,8 @@ export default function BookingPage({ user, setUser }){
     //navigate('/checkout');
   }
 
+
+
   return (
     <main className="NewOrderPage">
       <aside>
@@ -52,6 +62,8 @@ export default function BookingPage({ user, setUser }){
         <Link to="/booking" className="button btn-sm">PREVIOUS ORDERS</Link>
         {/* <UserLogOut user={user} setUser={setUser} /> */}
       </aside>
+      <WeatherApi />
+
       <div>
         <PackageDetail packages={packages}/>
       </div>
