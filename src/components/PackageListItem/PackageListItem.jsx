@@ -9,7 +9,7 @@ export default function PackageListItem({pkg}) {
   
   return (
       <>
-    <Link to={`/pacakges/${pkg._id}`} className='pkgLink'>
+    <Link to={`/packages/${pkg._id}`} className='pkgLink'>
     <div style={{'background': `url(${pkg.locaiton_img}) no-repeat center center`, 'WebkitBackgroundSize': '200px'}} className='pkgBox'>
     <div className='pkgDetails'> 
      <h1>{pkg.location}</h1>
