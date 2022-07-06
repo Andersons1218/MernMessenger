@@ -12,7 +12,7 @@ export default function BookingPage({ user, setUser }){
   const [packages, setPackages] = useState([]);
   const [activeCat, setActiveCat] = useState('');
   const [cart, setCart] = useState(null);
-  
+  console.log(packages)
   
   useEffect(function() {
     async function getItems() {
@@ -55,7 +55,7 @@ export default function BookingPage({ user, setUser }){
           activeCat={activeCat}
           setActiveCat={setActiveCat}
         /> 
-        <Link to="/booking" className="button btn-sm">PREVIOUS ORDERS</Link>
+        <Link to="/packages" className="button btn-sm">PREVIOUS ORDERS</Link>
         {/* <UserLogOut user={user} setUser={setUser} /> */}
       </aside>
       <PackageListItem
