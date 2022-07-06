@@ -53,6 +53,9 @@ export default function BookingPage({ user, setUser }){
         <Link to="/booking" className="button btn-sm">PREVIOUS ORDERS</Link>
         {/* <UserLogOut user={user} setUser={setUser} /> */}
       </aside>
+      <PackageListItem />
+      <PackageDetail
+      />
 
     </main>
   );
