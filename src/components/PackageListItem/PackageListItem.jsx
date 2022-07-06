@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 export default function PackageListItem({pkg}) {
   
   
-  console.log(pkg)
+  // console.log(pkg)
     
   
   return (

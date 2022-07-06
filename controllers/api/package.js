@@ -12,6 +12,7 @@ async function index(req, res) {
     // re-sort based upon the sortOrder of the categories
     // package.sort((a, b) => a.category.sortOrder - b.category.sortOrder);
     res.json(package);
+    // console.log(package)
   }
 
 async function show(req, res) {
