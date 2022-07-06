@@ -1,6 +1,10 @@
-export default function PackageListItem() {
-  
+
+export default function PackageListItem({pkg}) {
+  console.log(pkg)
     return (
-    <h1>hi</h1>
-    )
+      <>
+     <h1>{pkg.location}</h1>
+     <h2>{pkg.hotel}</h2>
+     </>
+    );
   }
