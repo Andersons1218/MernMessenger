@@ -6,7 +6,7 @@ const Package = require('./models/package');
 // IIFE - Immediately Invoked Function Expression
 (async function() {
 
-    await Package.deleteMany({});
+await Package.deleteMany({});
 const packages = await Package.create ([
   {
     location: "Puerto Rico",
@@ -210,7 +210,7 @@ const packages = await Package.create ([
     price: 659.99,
     date: "",
     car: "Honda",
-    location_img:
+    location_img: 
       "https://www.london.ac.uk/sites/default/files/styles/max_1300x1300/public/2018-10/london-aerial-cityscape-river-thames_1.jpg?itok=6LenFxuz",
     hotel_img:
       "https://lh3.googleusercontent.com/p/AF1QipNacv_2YTouNAPNpAtOSL8jFHTzxlsaGOWhutTf=w296-h202-n-k-rw-no-v1",
@@ -226,10 +226,8 @@ const packages = await Package.create ([
     price: 549.99,
     date: "",
     car: "Jeep Wrangler",
-    location_img:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7HWHRBDmF6uvWwygz2FYT9bmKk4C4cWV0Zw&usqp=CAU",
-    hotel_img:
-      "https://lh3.googleusercontent.com/p/AF1QipO0MoIYRFhai5iQ9Bf6YoGbOGxCObqtlU2VFyyu=w296-h202-n-k-rw-no-v1",
+    location_img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7HWHRBDmF6uvWwygz2FYT9bmKk4C4cWV0Zw&usqp=CAU",
+    hotel_img: "https://lh3.googleusercontent.com/p/AF1QipO0MoIYRFhai5iQ9Bf6YoGbOGxCObqtlU2VFyyu=w296-h202-n-k-rw-no-v1",
     flight_img: "https://s3-symbol-logo.tradingview.com/jetblue--600.png",
     car_img:
       "https://www.carscoops.com/wp-content/uploads/2022/02/2022-Jeep-Wrangler-Beach-and-high-tide-2-1.jpg",

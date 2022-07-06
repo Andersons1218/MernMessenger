@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom'
 import { useState } from 'react'
 export default function PackageDetail({packages}) {
 
-console.log(packages[1].Car)
+
  const [selectedPackage, setSelectedPackage] = useState('')
 
 
