@@ -8,7 +8,7 @@
 //   checkout,
 // };
 
-// A cart is the unpaid order for a user
+// //A cart is the unpaid order for a user
 // async function cart(req, res) {
 //   const cart = await Checkout.getCart(req.user._id);
 //   res.json(cart);
@@ -36,4 +36,4 @@
 //   cart.isPaid = true;
 //   await cart.save(); 
 //   res.json(cart);
-// }
+//}
