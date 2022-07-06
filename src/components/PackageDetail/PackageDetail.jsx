@@ -1,9 +1,10 @@
 import { useParams } from 'react-router-dom'
 import { useState } from 'react'
-export default function PackageDetail({packages}) {
+export default function PackageDetail({userPackage}) {
 
  const [selectedPackage, setSelectedPackage] = useState(null)
 
+ console.log(userPackage)
  
 //  let { packageId } = useParams()
  
@@ -22,9 +23,9 @@ export default function PackageDetail({packages}) {
    // let selectedPPackage = packages.packageId
    
    return (  
-    <>
+     <>
      <h1>Package Details:</h1>
-     <h2>{packages.location}</h2>
+     <h2>{userPackage.location}</h2>
     </> 
     );
 }

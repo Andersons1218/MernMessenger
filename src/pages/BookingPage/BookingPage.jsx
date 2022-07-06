@@ -13,6 +13,7 @@ export default function BookingPage({ user, setUser, packages }){
   // const [packages, setPackages] = useState([]);
   const [activeCat, setActiveCat] = useState('');
   const [cart, setCart] = useState(null);
+  const [userPackage, setUserPackage] = useState([])
 
     const cityName = 'London'
     const apiKey = 'b40659a94b9b6c0b7564f0015feec506'
@@ -56,14 +57,14 @@ export default function BookingPage({ user, setUser, packages }){
   return (
     <main style={{display: 'flex', flexFlow: 'row-nowrap', width: '100vw', justifyContent: 'space-between'}} className="NewOrderPage">
       <aside>
-        <PackageList packages={packages}/>
+        <PackageList packages={packages} setUserPackage={setUserPackage} />
         <Link to="/booking" className="button btn-sm">PREVIOUS ORDERS</Link>
         {/* <UserLogOut user={user} setUser={setUser} /> */}
       </aside>
       {/* <WeatherApi /> */}
 
       <div>
-        <PackageDetail packages={packages[0]} />
+        <PackageDetail userPackage={userPackage} />
       </div>
 
     </main>
