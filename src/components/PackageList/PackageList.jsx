@@ -7,7 +7,6 @@ export default function PackageList({packages}) {
   return (
     <>
     <main>
-    {/* {console.log(packages)} */}
     { packages.map(pkg => {
       return <PackageListItem key={pkg._id} pkg={pkg} />
     })}
