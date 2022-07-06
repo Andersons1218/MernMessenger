@@ -29,12 +29,15 @@ const [weather, setWeather] = useState();
     }, [weather])
    
 
- 
-
 
     return(
         <div>
-            <h1>Weather Api</h1>
+            {!!weather && weather.map((i, index) => (
+                <div key={index}>
+                    <WeatherDay min={i.min} max={i.max} weatherType={i.weatherType} />
+
+                </div>
+            ))}
         </div>
     )
 }
