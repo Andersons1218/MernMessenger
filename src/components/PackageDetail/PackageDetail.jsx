@@ -24,7 +24,7 @@ export default function PackageDetail({packages}) {
    return (  
     <>
      <h1>Package Details:</h1>
-     <h2></h2>
+     <h2>{packages.location}</h2>
     </> 
     );
 }

@@ -1,4 +1,4 @@
-import { Link, useParams } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { useState } from 'react'
 
 
@@ -7,10 +7,10 @@ export default function PackageListItem({pkg}) {
 
   
   const [pkgState, setPkgState] = useState(null)
-  let { packageId } = useParams()
+
   
   function setNewPkgState() {
-  let sltPackage = pkg.find(pkgs => pkgs.id === packageId)
+  let sltPackage = pkg.findOneById(pkg._id)
   setPkgState(sltPackage)
   console.log(pkgState)
 }
