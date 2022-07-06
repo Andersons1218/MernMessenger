@@ -9,8 +9,8 @@ import WeatherApi from '../../components/WeatherApi/WeatherApi'
 
 
 
-export default function BookingPage({ user, setUser }){
-  const [packages, setPackages] = useState([]);
+export default function BookingPage({ user, setUser, packages }){
+  // const [packages, setPackages] = useState([]);
   const [activeCat, setActiveCat] = useState('');
   const [cart, setCart] = useState(null);
 
@@ -18,22 +18,20 @@ export default function BookingPage({ user, setUser }){
     const apiKey = 'b40659a94b9b6c0b7564f0015feec506'
     const requestURL = `api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${apiKey}`
   
-  useEffect(function() {
-    async function getItems() {
-      const packages = await packageAPI.getAll();
-      // console.log(packages)
-      setPackages(packages);
-    }
-    getItems();
+  // useEffect(function() {
+  //   async function getItems() {
+  //     const packages = await packageAPI.getAll();
+  //     setPackages(packages);
+  //   }
+  //   getItems();
 
     // Load the user's cart (the unpaid order for that user)
-    async function getCart() {
-      const cart = await ordersAPI.getCart();
-      setCart(cart);
-    }
-    getCart();
-
-  }, []);
+  //   async function getCart() {
+  //     const cart = await ordersAPI.getCart();
+  //     setCart(cart);
+  //   }
+  //   getCart();
+  // }, []);
 
 
   async function handleAddToOrder(itemId) {
@@ -65,7 +63,7 @@ export default function BookingPage({ user, setUser }){
       <WeatherApi />
 
       <div>
-        <PackageDetail packages={packages}/>
+        <PackageDetail packages={packages} />
       </div>
 
     </main>
