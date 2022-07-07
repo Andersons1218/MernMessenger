@@ -28,7 +28,7 @@ export default function PackageDetail({userPackage}) {
    return (  
      <>
      <h1>Package Details:</h1><br/>
-      <img src={userPackage.locaiton_img} />
+      <img src={userPackage.location_img} />
      <h2>{userPackage.location}</h2>
      <ul>
       <li>{userPackage.rating}</li>
