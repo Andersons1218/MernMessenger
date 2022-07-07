@@ -24,7 +24,6 @@ export default function CheckoutPage({checkout}) {
 
     <button onClick={handleCheckToken}> Check when my account Expires </button>
     <CheckoutList />
-    <checkoutListItem />
 
     </>
     )

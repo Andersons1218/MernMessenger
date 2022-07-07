@@ -13,21 +13,19 @@ export default function PackageDetail({userPackage, addNewPackages, setCheckout}
 
 
  function submitCheckout(event) {
-
-   event.preventDefault();
-   setPackageAppend({ ...userPackage, persons: selectedPersons.persons });
-   //  console.log(packageAppend)
-   addNewPackages(packageAppend);
-   setSelectedPersons({ persons: 1 });
- }
+     event.preventDefault();   
+     addNewPackages({ ...userPackage, persons: selectedPersons.persons });
+     setSelectedPersons({ persons: 1 });
+   }
 
  function handlePersonsChange(event) {
   const newPersons = {
-    ...selectedPersons,
+    // ...selectedPersons,
     [event.target.name]:
-    event.target.value
+    Number(event.target.value)
   };
   setSelectedPersons(newPersons)
+  // setPackageAppend({ ...userPackage, persons: event.target.value });
  }
 
 

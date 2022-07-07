@@ -1,7 +1,10 @@
+import CheckoutListItem from "./CheckoutListItem";
+
 export default function CheckoutList() {
     return(
         <>
-        <h1>CheckoutList</h1>
+        <h1>Package</h1>
+        <CheckoutListItem />
         </>
     )
 }
