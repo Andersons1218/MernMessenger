@@ -10,7 +10,6 @@ import WeatherApi from '../../components/WeatherApi/WeatherApi'
 
 
 export default function BookingPage({ user, setUser, packages, addNewPackages, setCheckout }){
-  // const [packages, setPackages] = useState([]);
   const [activeCat, setActiveCat] = useState('');
   const [cart, setCart] = useState(null);
   const [userPackage, setUserPackage] = useState([])
@@ -54,25 +53,14 @@ export default function BookingPage({ user, setUser, packages, addNewPackages, s
   return (
     <main style={{display: 'flex', flexFlow: 'row-nowrap', width: '100vw', justifyContent: 'space-between'}} className="NewOrderPage">
       <aside>
-<<<<<<< HEAD
-        <PackageList packages={packages} setUserPackage={setUserPackage}  />
-        <Link to="/booking" className="button btn-sm">PREVIOUS ORDERS</Link>
-=======
         <PackageList packages={packages} setUserPackage={setUserPackage} />
         
->>>>>>> fdb3406eee0d05b520effdd5f80d241cd1b90886
         {/* <UserLogOut user={user} setUser={setUser} /> */}
       </aside>
       
 
       <div>
-<<<<<<< HEAD
         <PackageDetail userPackage={userPackage} addNewPackages={addNewPackages} setCheckout={setCheckout} />
-=======
-
-        <PackageDetail userPackage={userPackage} addNewPackages={addNewPackages} />
-
->>>>>>> fdb3406eee0d05b520effdd5f80d241cd1b90886
       </div>
 
     </main>
