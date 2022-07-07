@@ -3,11 +3,11 @@ import WeatherDay from "../WeatherDay/WeatherDay";
 
 export default function WeatherApi(){
 const [weather, setWeather] = useState();
+const [cityId, setCityId] = useState('')
 
-
-    const cityName = 'Cairo'
-    const cityId = '127164'
-    // const accuKey= 'QrCusMgrnbNg3fxxBA1s45QGZysaOiJM'
+    // const cityName = 'Cairo'
+    // const cityId = '1123655'
+    
     const accuKey= 'W8ADHjpBnjZel3Fv4rLBJAmMXzES46II'
     const requestURL = `http://dataservice.accuweather.com/forecasts/v1/daily/5day/${cityId}?apikey=${accuKey}`
 
@@ -22,23 +22,21 @@ const padNum = (num) => {
     }
 }
 
-    // useEffect(() => {
-    //     fetch(requestURL)
-    //     .then(res => res.json())
-    //     // .then(res => console.log(res))
-    //     .then(res => setWeather(res.DailyForecasts.map(df => {
-    //         return {
-    //             min: df.Temperature.Minimum.Value,
-    //             max: df.Temperature.Maximum.Value,
-    //             weatherType: df.Day.IconPhrase,
-    //             weatherIcon: padNum(df.Day.Icon),
-    //         }
-    //     })))       
-    // }, [])
+    useEffect(() => {
+        fetch(requestURL)
+        .then(res => res.json())
+        // .then(res => console.log(res))
+        .then(res => setWeather(res.DailyForecasts.map(df => {
+            return {
+                min: df.Temperature.Minimum.Value,
+                max: df.Temperature.Maximum.Value,
+                weatherType: df.Day.IconPhrase,
+                weatherIcon: padNum(df.Day.Icon),
+            }
+        })))       
+    }, [cityId])
 
-    // useEffect(() => {
-    //     console.log(weather)
-    // }, [weather])
+
    
 
 

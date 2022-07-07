@@ -1,5 +1,7 @@
 import { useParams } from 'react-router-dom'
 import { useState } from 'react'
+import WeatherApi from '../../components/WeatherApi/WeatherApi'
+
 export default function PackageDetail({userPackage, addNewPackages}) {
 
 
@@ -9,7 +11,7 @@ export default function PackageDetail({userPackage, addNewPackages}) {
  function submitChanges(event) {
  event.preventDefault();
  addNewPackages(selectedPersons)
- setSelected
+//  setSelected
  }
 
  function handlePersonsChange(event) {
@@ -35,6 +37,7 @@ export default function PackageDetail({userPackage, addNewPackages}) {
      <h1>Package Details:</h1><br/>
       <img src={userPackage.location_img} />
      <h2>{userPackage.location}</h2>
+     <div><WeatherApi /></div>
      <ul>
       <li>{userPackage.rating}</li>
       <li>{userPackage.hotel}</li>

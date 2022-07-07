@@ -5,7 +5,7 @@ import PackageDetail from "../../components/PackageDetail/PackageDetail"
 import PackageListItem from "../../components/PackageListItem/PackageListItem"
 import * as packageAPI from '../../utilities/packages-api';
 import * as ordersAPI from '../../utilities/orders-api';
-import WeatherApi from '../../components/WeatherApi/WeatherApi'
+
 
 
 
@@ -63,7 +63,7 @@ export default function BookingPage({ user, setUser, packages, addNewPackages })
       <div>
 
         <PackageDetail userPackage={userPackage} addNewPackages={addNewPackages} />
-
+        
       </div>
 
     </main>
