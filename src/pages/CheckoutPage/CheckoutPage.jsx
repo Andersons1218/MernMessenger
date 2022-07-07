@@ -1,10 +1,12 @@
 import CheckoutList from '../../components/Checkout/CheckoutList'
 import * as userService from '../../utilities/users-service'
 
-export default function CheckoutPage(checkout) {
+export default function CheckoutPage({checkout}) {
 
     function showCheckout() {
-        console.log(`Here are the Packages you ordered: ${checkout}.`)
+        checkout.map((item) => {
+            console.log(`Here are the Packages you ordered: ${item._id}.`)
+        })
     }
 
     async function handleCheckToken(){
