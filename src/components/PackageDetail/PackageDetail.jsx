@@ -9,7 +9,7 @@ export default function PackageDetail({userPackage, addNewPackages}) {
  function submitChanges(event) {
  event.preventDefault();
  addNewPackages(selectedPersons)
- setSelected
+ setSelectedPersons('')
  }
 
  function handlePersonsChange(event) {
