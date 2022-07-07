@@ -14,7 +14,7 @@ export default function NavBar({ user, setUser }) {
         <nav>
             <Link to="/packages">Booking</Link>
             &nbsp; | &nbsp;
-            <Link to="/packages/checkout">Check out</Link>
+            <Link to="/checkout">Check out</Link>
             &nbsp; | &nbsp;
             Welcome, { user.name }
             &nbsp; | &nbsp;

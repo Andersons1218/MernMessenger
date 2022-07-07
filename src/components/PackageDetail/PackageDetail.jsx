@@ -15,15 +15,15 @@ export default function PackageDetail({userPackage}) {
 //  let sltPackage = packages.find(pkg => pkg.id === packageId)
 //  console.log(sltPackage)
 // console.log(packages)
- // packages.filter((pkg) => pkg._id === packageId)
+//  packages.filter((pkg) => pkg._id === packageId)
  
- // console.log(packageId)
- //  function whichPackage() {
-   //  setSelectedPackage(packageId)
-   //  console.log(selectedPackage), []
-   //  }
-   //  whichPackage()
-   // let selectedPPackage = packages.packageId
+//  console.log(packageId)
+//   function whichPackage() {
+//     setSelectedPackage(packageId)
+//     console.log(selectedPackage), []
+//     }
+//     whichPackage()
+//    let selectedPPackage = packages.packageId
    
    return (  
      <>

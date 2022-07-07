@@ -15,8 +15,6 @@ export default function PackageListItem({pkg, setUserPackage}) {
 
 
   return (
-
-    
     <>
     {/* <Link to={`/packages/${pkg._id}`} className='pkgLink' onClick={setPkgState}> */}
     <div style={{'background': `url(${pkg.locaiton_img}) no-repeat center center`, 'WebkitBackgroundSize': '200px'}} onClick={setNewPkgState} className='pkgBox'>

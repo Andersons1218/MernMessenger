@@ -1,3 +1,4 @@
+import CheckoutList from '../../components/Checkout/CheckoutList'
 import * as userService from '../../utilities/users-service'
 
 export default function CheckoutPage(props) {
@@ -11,7 +12,9 @@ export default function CheckoutPage(props) {
     return(
         <>
     <h1> Order History </h1>
-    <button onClick={handleCheckToken}> Check if My Login Expires </button>
+    <button onClick={handleCheckToken}> Check when my account Expires </button>
+    <CheckoutList />
+    <checkoutListItem />
     </>
     )
 }
