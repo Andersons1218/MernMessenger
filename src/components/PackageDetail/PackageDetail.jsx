@@ -1,19 +1,37 @@
 import { useParams } from 'react-router-dom'
 import { useState } from 'react'
-export default function PackageDetail({userPackage, setCheckout}) {
+export default function PackageDetail({userPackage, addNewPackages}) {
 
 
 
- const [selectedPackage, setSelectedPackage] = useState('')
+ const [selectedPersons, setSelectedPersons] = useState('')
 
-// This is logic for testing checkout state!
-function checkoutTest(){
-setCheckout(userPackage)
-}
-   
-   return (  
+ function submitChanges(event) {
+ event.preventDefault();
+ addNewPackages(selectedPersons)
+ setSelected
+ }
+
+ function handlePersonsChange(event) {
+  const newPersons = {
+    ...selectedPersons,
+    [event.target.name]:
+    event.target.value
+  };
+ }
+
+
+
+
+ // This is logic for testing checkout state!
+ // function checkoutTest(){
+ // setCheckout(userPackage)
+ // }
+ 
+ // This is logic to handle the setting of 'checkout' state.
+ return (  
      <>
-     <button onClick={checkoutTest}>Testing checkout state</button>
+     {/* <button onClick={checkoutTest}>Testing checkout state</button> */}
      <h1>Package Details:</h1><br/>
       <img src={userPackage.locaiton_img} />
      <h2>{userPackage.location}</h2>
@@ -33,7 +51,14 @@ setCheckout(userPackage)
       <div className="package-add">
         <form action="">
           <label>For How Many People?:</label>
-
+        <select name="persons" value={selectedPersons.persons} onChange={handlePersonsChange}>
+        <option value={1}>1</option>
+        <option value={2}>2</option>
+        <option value={3}>3</option>
+        <option value={4}>4</option>
+        <option value={5}>5</option>
+      </select>
+      <button type="submit">Add Package</button>
         </form>
       </div>
     </> 
