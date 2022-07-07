@@ -15,9 +15,6 @@ export default function BookingPage({ user, setUser, packages }){
   const [cart, setCart] = useState(null);
   const [userPackage, setUserPackage] = useState([])
 
-    const cityName = 'London'
-    const apiKey = 'b40659a94b9b6c0b7564f0015feec506'
-    const requestURL = `api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${apiKey}`
   
   // useEffect(function() {
   //   async function getItems() {
@@ -61,10 +58,11 @@ export default function BookingPage({ user, setUser, packages }){
         <Link to="/booking" className="button btn-sm">PREVIOUS ORDERS</Link>
         {/* <UserLogOut user={user} setUser={setUser} /> */}
       </aside>
-      {/* <WeatherApi /> */}
+      
 
       <div>
         <PackageDetail userPackage={userPackage} />
+        <WeatherApi />
       </div>
 
     </main>
