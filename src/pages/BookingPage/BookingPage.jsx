@@ -9,7 +9,7 @@ import WeatherApi from '../../components/WeatherApi/WeatherApi'
 
 
 
-export default function BookingPage({ user, setUser, packages }){
+export default function BookingPage({ user, setUser, packages, addNewPackages }){
   // const [packages, setPackages] = useState([]);
   const [activeCat, setActiveCat] = useState('');
   const [cart, setCart] = useState(null);
@@ -61,8 +61,9 @@ export default function BookingPage({ user, setUser, packages }){
       
 
       <div>
-        <PackageDetail userPackage={userPackage} />
-        <WeatherApi />
+
+        <PackageDetail userPackage={userPackage} addNewPackages={addNewPackages} />
+
       </div>
 
     </main>

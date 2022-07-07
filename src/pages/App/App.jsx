@@ -22,14 +22,20 @@ export default function App() {
     getItems();
   }, []);
 
+  function addToCheckout(pkg) {
+    setCheckout([...checkout, pkg]);
+  }
+
   return (
     <main className="App">
       {user ?
       <> 
           <NavBar user={user} setUser={setUser} />
           <Routes>
-            <Route path="/packages" element={<BookingPage packages={packages}/>} />
-            <Route path="/checkout" element={<CheckoutPage />} />
+
+            <Route path="/packages" element={<BookingPage packages={packages} addNewPackages={addToCheckout}/>} />
+            <Route path="/checkout" element={<CheckoutPage checkout={checkout}/>} />
+
             {/* <Route path="/packages/:id" element={<PackageDetail packages={packages}/>} /> */}
           </Routes>
       </>
