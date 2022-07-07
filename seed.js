@@ -6,7 +6,7 @@ const Package = require('./models/package');
 // IIFE - Immediately Invoked Function Expression
 (async function() {
 
-    await Package.deleteMany({});
+await Package.deleteMany({});
 const packages = await Package.create ([
   {
     location: "Puerto Rico",

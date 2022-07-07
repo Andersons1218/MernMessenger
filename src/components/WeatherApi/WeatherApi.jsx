@@ -11,22 +11,22 @@ const [weather, setWeather] = useState();
     const accuKey= 'QrCusMgrnbNg3fxxBA1s45QGZysaOiJM'
     const requestURL = `http://dataservice.accuweather.com/forecasts/v1/daily/5day/${cityId}?apikey=${accuKey}`
 
-    useEffect(() => {
-        fetch(requestURL)
-        .then(res => res.json())
-        // .then(res => console.log(res))
-        .then(res => setWeather(res.DailyForecasts.map(df => {
-            return {
-                min: df.Temperature.Minimum.Value,
-                max: df.Temperature.Maximum.Value,
-                weatherType: df.Day.IconPhrase,
-            }
-        })))       
-    }, [])
+    // useEffect(() => {
+    //     fetch(requestURL)
+    //     .then(res => res.json())
+    //     // .then(res => console.log(res))
+    //     .then(res => setWeather(res.DailyForecasts.map(df => {
+    //         return {
+    //             min: df.Temperature.Minimum.Value,
+    //             max: df.Temperature.Maximum.Value,
+    //             weatherType: df.Day.IconPhrase,
+    //         }
+    //     })))       
+    // }, [])
 
-    useEffect(() => {
-        console.log(weather)
-    }, [weather])
+    // useEffect(() => {
+    //     console.log(weather)
+    // }, [weather])
    
 
 
