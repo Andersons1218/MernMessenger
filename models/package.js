@@ -13,7 +13,7 @@ locaiton_img: String,
 hotel_img: String,
 flight_img: String,
 car_img: String,
-user: { type: Schema.Types.ObjectId, ref: 'User' },
+persons: Number
 }, {
   timestamps: true
 });

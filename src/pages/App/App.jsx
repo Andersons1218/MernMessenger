@@ -12,7 +12,7 @@ import * as packageAPI from '../../utilities/packages-api';
 export default function App() {
   const [user, setUser] = useState(getUser())
   const [packages, setPackages] = useState([]);
-
+  const [checkout, setCheckout] = useState([]);
   useEffect(function() {
     async function getItems() {
       const packages = await packageAPI.getAll();
@@ -30,7 +30,7 @@ export default function App() {
           <Routes>
             <Route path="/packages" element={<BookingPage packages={packages}/>} />
             <Route path="/packages/checkout" element={<CheckoutPage />} />
-            <Route path="/packages/:id" element={<PackageDetail packages={packages}/>} />
+            {/* <Route path="/packages/:id" element={<PackageDetail packages={packages}/>} /> */}
           </Routes>
       </>
       :
