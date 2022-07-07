@@ -1,7 +1,8 @@
 import { useParams } from 'react-router-dom'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import WeatherDay from '../WeatherDay/WeatherDay'
 
-import WeatherApi from '../../components/WeatherApi/WeatherApi'
+// import WeatherApi from '../../components/WeatherApi/WeatherApi'
 
 
 export default function PackageDetail({userPackage, addNewPackages, setCheckout}) {
@@ -10,6 +11,8 @@ export default function PackageDetail({userPackage, addNewPackages, setCheckout}
 // Passing the selected user package as state into packageAppend.
  const [packageAppend, setPackageAppend] = useState({})
  const [selectedPersons, setSelectedPersons] = useState([])
+ // weather api state
+ const [weather, setWeather] = useState();
 
 
  function submitCheckout(event) {
@@ -30,6 +33,40 @@ export default function PackageDetail({userPackage, addNewPackages, setCheckout}
   setSelectedPersons(newPersons)
  }
 
+ 
+
+//********* Weather Api Function ***********
+   // Weather API constants
+    const cityId = userPackage.weatherKey
+    
+    const accuKey= 'W8ADHjpBnjZel3Fv4rLBJAmMXzES46II'
+    const requestURL = `http://dataservice.accuweather.com/forecasts/v1/daily/5day/${cityId}?apikey=${accuKey}`
+
+const padNum = (num) => {
+    const stringNum = num + '';
+    const stringLength = stringNum.length;
+
+    if (stringLength === 1) {
+        return '0' + stringNum;
+    } else {
+        return stringNum
+    }
+}
+
+    useEffect(() => {
+        fetch(requestURL)
+        .then(res => res.json())
+        // .then(res => console.log(res))
+        .then(res => setWeather(res.DailyForecasts.map(df => {
+            return {
+                min: df.Temperature.Minimum.Value,
+                max: df.Temperature.Maximum.Value,
+                weatherType: df.Day.IconPhrase,
+                weatherIcon: padNum(df.Day.Icon),
+                date: df.Date
+            }
+        })))       
+    }, [cityId])
 
 
 
@@ -46,7 +83,22 @@ console.log(packageAppend)
      <h1>Package Details:</h1><br/>
       <img src={userPackage.location_img} />
      <h2>{userPackage.location}</h2>
-     <div><WeatherApi /></div>
+     <div>
+        <div>
+            {!!weather && weather.map((i, index) => (
+                <div key={index}>
+                    <WeatherDay
+                        min={i.min}
+                        max={i.max}
+                        weatherType={i.weatherType}
+                        weatherIcon={i.weatherIcon}
+                        date={i.date} 
+                    />
+
+                </div>
+            ))}
+        </div>
+      </div>
      <ul>
       <li>{userPackage.rating}</li>
       <li>{userPackage.hotel}</li>
