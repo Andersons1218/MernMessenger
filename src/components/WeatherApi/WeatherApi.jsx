@@ -5,8 +5,8 @@ export default function WeatherApi(){
 const [weather, setWeather] = useState();
 
 
-    const cityName = 'New York'
-    const cityId = '349727'
+    const cityName = 'Cairo'
+    const cityId = '127164'
     // const accuKey= 'QrCusMgrnbNg3fxxBA1s45QGZysaOiJM'
     const accuKey= 'W8ADHjpBnjZel3Fv4rLBJAmMXzES46II'
     const requestURL = `http://dataservice.accuweather.com/forecasts/v1/daily/5day/${cityId}?apikey=${accuKey}`
@@ -31,7 +31,7 @@ const padNum = (num) => {
     //             min: df.Temperature.Minimum.Value,
     //             max: df.Temperature.Maximum.Value,
     //             weatherType: df.Day.IconPhrase,
-    //             weatherKey: padNum(df.Day.Icon),
+    //             weatherIcon: padNum(df.Day.Icon),
     //         }
     //     })))       
     // }, [])
@@ -50,7 +50,7 @@ const padNum = (num) => {
                         min={i.min}
                         max={i.max}
                         weatherType={i.weatherType}
-                        weatherKey={i.weatherKey} 
+                        weatherIcon={i.weatherIcon} 
                     />
 
                 </div>
