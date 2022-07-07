@@ -10,7 +10,6 @@ import * as ordersAPI from '../../utilities/orders-api';
 
 
 export default function BookingPage({ user, setUser, packages, addNewPackages, setCheckout }){
-  // const [packages, setPackages] = useState([]);
   const [activeCat, setActiveCat] = useState('');
   const [cart, setCart] = useState(null);
   const [userPackage, setUserPackage] = useState([])
@@ -57,7 +56,8 @@ export default function BookingPage({ user, setUser, packages, addNewPackages, s
 
         <PackageList packages={packages} setUserPackage={setUserPackage} />
         
-        <UserLogOut user={user} setUser={setUser} /> 
+        {/* <UserLogOut user={user} setUser={setUser} /> */}
+
       </aside>
       
 
