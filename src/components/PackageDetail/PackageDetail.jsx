@@ -1,32 +1,19 @@
 import { useParams } from 'react-router-dom'
 import { useState } from 'react'
-export default function PackageDetail({userPackage}) {
+export default function PackageDetail({userPackage, setCheckout}) {
 
 
 
  const [selectedPackage, setSelectedPackage] = useState('')
 
-
- console.log(userPackage)
- 
-//  let { packageId } = useParams()
- 
-
-//  let sltPackage = packages.find(pkg => pkg.id === packageId)
-//  console.log(sltPackage)
-// console.log(packages)
- // packages.filter((pkg) => pkg._id === packageId)
- 
- // console.log(packageId)
- //  function whichPackage() {
-   //  setSelectedPackage(packageId)
-   //  console.log(selectedPackage), []
-   //  }
-   //  whichPackage()
-   // let selectedPPackage = packages.packageId
+// This is logic for testing checkout state!
+function checkoutTest(){
+setCheckout(userPackage)
+}
    
    return (  
      <>
+     <button onClick={checkoutTest}>Testing checkout state</button>
      <h1>Package Details:</h1><br/>
       <img src={userPackage.locaiton_img} />
      <h2>{userPackage.location}</h2>
@@ -46,7 +33,7 @@ export default function PackageDetail({userPackage}) {
       <div className="package-add">
         <form action="">
           <label>For How Many People?:</label>
-          
+
         </form>
       </div>
     </> 
