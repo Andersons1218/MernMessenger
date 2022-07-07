@@ -1,6 +1,11 @@
 import { useParams } from 'react-router-dom'
 import { useState } from 'react'
+
+import WeatherApi from '../../components/WeatherApi/WeatherApi'
+
+
 export default function PackageDetail({userPackage, addNewPackages, setCheckout}) {
+
 
 // Passing the selected user package as state into packageAppend.
  const [packageAppend, setPackageAppend] = useState({})
@@ -8,6 +13,7 @@ export default function PackageDetail({userPackage, addNewPackages, setCheckout}
 
 
  function submitCheckout(event) {
+
    event.preventDefault();
    setPackageAppend({ ...userPackage, persons: selectedPersons.persons });
    //  console.log(packageAppend)
@@ -40,6 +46,7 @@ console.log(packageAppend)
      <h1>Package Details:</h1><br/>
       <img src={userPackage.location_img} />
      <h2>{userPackage.location}</h2>
+     <div><WeatherApi /></div>
      <ul>
       <li>{userPackage.rating}</li>
       <li>{userPackage.hotel}</li>
