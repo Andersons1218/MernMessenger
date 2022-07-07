@@ -9,7 +9,7 @@ import * as ordersAPI from '../../utilities/orders-api';
 
 
 
-export default function BookingPage({ user, setUser, packages, addNewPackages }){
+export default function BookingPage({ user, setUser, packages, addNewPackages, setCheckout }){
   // const [packages, setPackages] = useState([]);
   const [activeCat, setActiveCat] = useState('');
   const [cart, setCart] = useState(null);
@@ -54,16 +54,16 @@ export default function BookingPage({ user, setUser, packages, addNewPackages })
   return (
     <main style={{display: 'flex', flexFlow: 'row-nowrap', width: '100vw', justifyContent: 'space-between'}} className="NewOrderPage">
       <aside>
+
         <PackageList packages={packages} setUserPackage={setUserPackage} />
         
-        {/* <UserLogOut user={user} setUser={setUser} /> */}
+        <UserLogOut user={user} setUser={setUser} /> 
       </aside>
       
 
       <div>
+        <PackageDetail userPackage={userPackage} addNewPackages={addNewPackages} setCheckout={setCheckout} />
 
-        <PackageDetail userPackage={userPackage} addNewPackages={addNewPackages} />
-        
       </div>
 
     </main>

@@ -1,17 +1,27 @@
 import { useParams } from 'react-router-dom'
 import { useState } from 'react'
+
 import WeatherApi from '../../components/WeatherApi/WeatherApi'
 
-export default function PackageDetail({userPackage, addNewPackages}) {
+
+export default function PackageDetail({userPackage, addNewPackages, setCheckout}) {
 
 
+// Passing the selected user package as state into packageAppend.
+ const [packageAppend, setPackageAppend] = useState([userPackage])
+ const [selectedPersons, setSelectedPersons] = useState([])
 
- const [selectedPersons, setSelectedPersons] = useState('')
-
- function submitChanges(event) {
+ function submitCheckout(event) {
  event.preventDefault();
- addNewPackages(selectedPersons)
-//  setSelected
+
+  const personsAppend = {
+    ...packageAppend,
+    selectedPersons
+  }
+  console.log(personsAppend)
+  // addNewPackages(personsAppend)
+  // setSelectedPersons({ persons: 1 })
+
  }
 
  function handlePersonsChange(event) {
@@ -20,20 +30,22 @@ export default function PackageDetail({userPackage, addNewPackages}) {
     [event.target.name]:
     event.target.value
   };
+  setSelectedPersons(newPersons)
  }
 
 
 
 
  // This is logic for testing checkout state!
- // function checkoutTest(){
- // setCheckout(userPackage)
- // }
+ function checkoutTest(){
+console.log(packageAppend)
+  //  setCheckout(userPackage)
+ }
  
  // This is logic to handle the setting of 'checkout' state.
  return (  
      <>
-     {/* <button onClick={checkoutTest}>Testing checkout state</button> */}
+     <button onClick={checkoutTest}>Testing checkout state</button>
      <h1>Package Details:</h1><br/>
       <img src={userPackage.location_img} />
      <h2>{userPackage.location}</h2>
@@ -51,7 +63,7 @@ export default function PackageDetail({userPackage, addNewPackages}) {
       <img src={userPackage.flight_img} />
       <img src={userPackage.car_img} />
       </div>
-      <div className="package-add">
+      <div className="package-add" onSubmit={submitCheckout}>
         <form action="">
           <label>For How Many People?:</label>
         <select name="persons" value={selectedPersons.persons} onChange={handlePersonsChange}>
