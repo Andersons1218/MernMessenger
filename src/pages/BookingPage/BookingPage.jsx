@@ -15,9 +15,6 @@ export default function BookingPage({ user, setUser, packages, addNewPackages })
   const [cart, setCart] = useState(null);
   const [userPackage, setUserPackage] = useState([])
 
-    const cityName = 'London'
-    const apiKey = 'b40659a94b9b6c0b7564f0015feec506'
-    const requestURL = `api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${apiKey}`
   
   // useEffect(function() {
   //   async function getItems() {
@@ -58,13 +55,15 @@ export default function BookingPage({ user, setUser, packages, addNewPackages })
     <main style={{display: 'flex', flexFlow: 'row-nowrap', width: '100vw', justifyContent: 'space-between'}} className="NewOrderPage">
       <aside>
         <PackageList packages={packages} setUserPackage={setUserPackage} />
-        <Link to="/booking" className="button btn-sm">PREVIOUS ORDERS</Link>
+        
         {/* <UserLogOut user={user} setUser={setUser} /> */}
       </aside>
-      {/* <WeatherApi /> */}
+      
 
       <div>
+
         <PackageDetail userPackage={userPackage} addNewPackages={addNewPackages} />
+
       </div>
 
     </main>
