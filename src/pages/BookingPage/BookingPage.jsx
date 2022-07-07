@@ -58,7 +58,7 @@ export default function BookingPage({ user, setUser, packages }){
     <main style={{display: 'flex', flexFlow: 'row-nowrap', width: '100vw', justifyContent: 'space-between'}} className="NewOrderPage">
       <aside>
         <PackageList packages={packages} setUserPackage={setUserPackage} />
-        <Link to="/booking" className="button btn-sm">PREVIOUS ORDERS</Link>
+        
         {/* <UserLogOut user={user} setUser={setUser} /> */}
       </aside>
       {/* <WeatherApi /> */}
