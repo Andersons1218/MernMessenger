@@ -76,13 +76,23 @@ console.log(packageAppend)
  
  // This is logic to handle the setting of 'checkout' state.
  return (  
-     <div className='grid justify-items-center'>
-     <button onClick={checkoutTest}>Testing checkout state</button>
-     <h1>Package Details:</h1><br/>
-      <img src={userPackage.location_img} width="550px" />
-     <h2>{userPackage.location}</h2>
-     <div>
-        <div className="flex justify-start" >
+     <div className='grid grid-cols-2 justify-items-center font-display font-light '>
+     {/* <button onClick={checkoutTest}>Testing checkout state</button> */}
+     <div className=""> // div 1
+        <h1 className='flex underline text-2xl '>Package Details:</h1><br/>
+        <img className='rounded-lg drop-shadow-2xl my-2' src={userPackage.location_img} width="550px" />
+        <h2 >{userPackage.location}</h2>
+        <ul className='my-2'>
+          <li >{userPackage.rating}</li>
+          <li className='my-2'>{userPackage.hotel}</li>
+          <li className='my-2'>{userPackage.flight}</li>
+          <li className='my-2'>{userPackage.price}</li>
+          <li className='my-2'>{userPackage.car}</li>
+        </ul>
+     </div>
+     <div> // div 2
+      <div>5 Day Forecast</div>
+        <div className="py-4" >
             {!!weather && weather.map((i, index) => (
                 <div key={index}>
                     <WeatherDay
@@ -97,18 +107,15 @@ console.log(packageAppend)
             ))}
         </div>
       </div>
-     <ul>
-      <li>{userPackage.rating}</li>
-      <li>{userPackage.hotel}</li>
-      <li>{userPackage.flight}</li>
-      <li>{userPackage.price}</li>
-      <li>{userPackage.car}</li>
-     </ul><br />
-      <div className="gallery">
+    <div>  // div 3    
+    
+     </div>
+     <br />
+      <div className="flex flex-col gallery rounded-lg"> // div 4
       <h1>Gallery:</h1>
-      <img src={userPackage.hotel_img} width="550px"/>
-      <img src={userPackage.flight_img} width="550px"/>
-      <img src={userPackage.car_img} width="550px"/>
+      <img className='rounded-lg' src={userPackage.hotel_img} width="550px"/>
+      <img className='rounded-lg' src={userPackage.flight_img} width="300px" />
+      <img className='rounded-lg' src={userPackage.car_img} width="550px" />
       </div>
       <div className="package-add" onSubmit={submitCheckout}>
         <form action="">
