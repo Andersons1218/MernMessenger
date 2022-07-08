@@ -1,4 +1,7 @@
 export default function CheckoutListItem({pkg, setCheckout}){
+    
+ 
+    
     return(
         <>
         <div style={{'background': `url(${pkg.location_img}) no-repeat center center`, 'WebkitBackgroundSize': '300px'}}className="card-banner">       
