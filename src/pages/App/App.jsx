@@ -33,7 +33,7 @@ export default function App() {
           <NavBar user={user} setUser={setUser} />
           <Routes>
             <Route path="/packages" element={<BookingPage packages={packages} addNewPackages={addToCheckout}/>} />
-            <Route path="/checkout" element={<CheckoutPage checkout={checkout}/>} />
+            <Route path="/checkout" element={<CheckoutPage checkout={checkout} setCheckout={setCheckout}/>} />
             {/* <Route path="/packages/:id" element={<PackageDetail packages={packages}/>} /> */}
           </Routes>
       </>

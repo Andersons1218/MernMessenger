@@ -2,7 +2,7 @@ import CheckoutList from '../../components/Checkout/CheckoutList'
 import CheckoutTotal from '../../components/Checkout/CheckoutTotal'
 import * as userService from '../../utilities/users-service'
 
-export default function CheckoutPage({checkout}) {
+export default function CheckoutPage({checkout, setCheckout}) {
 
     function showCheckout() {
         checkout.map((item) => {
@@ -19,8 +19,7 @@ export default function CheckoutPage({checkout}) {
     return(
 
     <main style={{display: 'flex', flexFlow: 'row-nowrap', width: '100vw', justifyContent: 'space-between'}}className="CheckoutPage">
-    
-    <CheckoutList checkout={checkout} />
+    <CheckoutList checkout={checkout} setCheckout={setCheckout} />
     <aside>
         <CheckoutTotal />
     </aside>
