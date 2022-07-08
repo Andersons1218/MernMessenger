@@ -1,10 +1,11 @@
-require("dotenv").config();
-require("./config/database");
+require('dotenv').config();
+require('./config/database');
 
-const Package = require("./models/package");
+const Package = require('./models/package');
 
 // IIFE - Immediately Invoked Function Expression
-(async function () {
+(async function() {
+
 await Package.deleteMany({});
 const packages = await Package.create ([
   {
@@ -246,5 +247,8 @@ const packages = await Package.create ([
   },
 ]);
 
-  process.exit;
-})();
+console.log(packages)
+
+process.exit
+
+})()
