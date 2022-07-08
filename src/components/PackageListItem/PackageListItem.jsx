@@ -15,14 +15,20 @@ export default function PackageListItem({pkg, setUserPackage}) {
 
 
   return (
+
+    
     <>
-    {/* <Link to={`/packages/${pkg._id}`} className='pkgLink' onClick={setPkgState}> */}
-    <div style={{'background': `url(${pkg.location_img}) no-repeat center center`, 'WebkitBackgroundSize': '200px'}} onClick={setNewPkgState} className='pkgBox'>
-     <h1>{pkg.location}</h1>
-     <h2>{pkg.hotel}</h2>
-     <h3>{pkg.rating}</h3>
-     </div>
-     {/* </Link> */}
+    <br></br>
+    <div>
+    <div className='hover:scale-125 shadow-md border border-slate-200 py-2 ml-8 pkgBox' 
+          style={{'background': `url(${pkg.location_img}) no-repeat center center`, 'WebkitBackgroundSize': '200px', width: "200px", height: '100px'}} 
+          onClick={setNewPkgState}>
+     
+     <h1 class="font-sans md:text-center">{pkg.location}</h1>
+    </div>
+    
+    </div>
+   
      </>
     );
   }
