@@ -19,10 +19,16 @@ export default function PackageListItem({pkg, setUserPackage}) {
     
     <>
     <br></br>
-    <div class='hover:' style={{'background': `url(${pkg.location_img}) no-repeat center center`, 'WebkitBackgroundSize': '200px', width: "200px", height: '50px'}} onClick={setNewPkgState} className='pkgBox'>
-     <h1 class="font-sans md:text-center hover:uppercase">{pkg.location}</h1>
+    <div>
+    <div className='hover:scale-125 shadow-md border border-slate-200 py-2 ml-8 pkgBox' 
+          style={{'background': `url(${pkg.location_img}) no-repeat center center`, 'WebkitBackgroundSize': '200px', width: "200px", height: '100px'}} 
+          onClick={setNewPkgState}>
+     
+     <h1 class="font-sans md:text-center">{pkg.location}</h1>
+    </div>
     
-     </div>
+    </div>
+   
      </>
     );
   }
