@@ -1,5 +1,6 @@
 export default function CheckoutTotal(){
-    return(
+    
+    return (
         <>
         <aside>
             <ul>

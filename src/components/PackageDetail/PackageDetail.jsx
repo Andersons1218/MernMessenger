@@ -6,8 +6,6 @@ import WeatherDay from '../WeatherDay/WeatherDay'
 
 
 export default function PackageDetail({userPackage, addNewPackages, setCheckout}) {
-
-
 // Passing the selected user package as state into packageAppend.
  const [packageAppend, setPackageAppend] = useState({})
  const [selectedPersons, setSelectedPersons] = useState([])
