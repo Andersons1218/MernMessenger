@@ -78,19 +78,19 @@ console.log(packageAppend)
  return (  
      <div className='grid grid-cols-2 justify-items-center'>
      {/* <button onClick={checkoutTest}>Testing checkout state</button> */}
-     <div className=""> // div 1
+     <div className=""> 
         <h1>Package Details:</h1><br/>
         <img className='rounded-lg drop-shadow-2xl' src={userPackage.location_img} width="550px" />
         <h2>{userPackage.location}</h2>
+        <p>{userPackage.rating}</p>
         <ul>
-          <li>{userPackage.rating}</li>
           <li>{userPackage.hotel}</li>
           <li>{userPackage.flight}</li>
           <li>{userPackage.price}</li>
           <li>{userPackage.car}</li>
         </ul>
      </div>
-     <div> // div 2
+     <div> 
       <div>5 Day Forecast</div>
         <div className="py-4" >
             {!!weather && weather.map((i, index) => (
@@ -102,32 +102,30 @@ console.log(packageAppend)
                         weatherIcon={i.weatherIcon}
                         date={i.date} 
                     />
-
                 </div>
             ))}
         </div>
       </div>
-    <div>  // div 3    
-    
+    <div>      
      </div>
      <br />
-      <div className="flex flex-col gallery rounded-lg"> // div 4
+      <div className="flex flex-col gallery rounded-lg"> 
       <h1>Gallery:</h1>
       <img className='rounded-lg' src={userPackage.hotel_img} width="550px"/>
-      <img className='rounded-lg' src={userPackage.flight_img} width="300px" />
+      <img className='rounded-lg' src={userPackage.flight_img} width="200px" height="100px" />
       <img className='rounded-lg' src={userPackage.car_img} width="550px" />
       </div>
       <div className="package-add" onSubmit={submitCheckout}>
         <form action="">
           <label>For How Many People?:</label>
-        <select name="persons" value={selectedPersons.persons} onChange={handlePersonsChange}>
+        <select class='' name="persons" value={selectedPersons.persons} onChange={handlePersonsChange}>
         <option value={1}>1</option>
         <option value={2}>2</option>
         <option value={3}>3</option>
         <option value={4}>4</option>
         <option value={5}>5</option>
       </select>
-      <button type="submit">Add Package</button>
+      <button class='bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded'type="submit">Add Package</button>
         </form>
       </div>
     </div> 
