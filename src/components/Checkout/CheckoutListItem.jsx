@@ -1,22 +1,15 @@
-<<<<<<< HEAD
-export default function CheckoutListItem({pkg, setCheckout}){
-    
- 
-    
-=======
 export default function CheckoutListItem({pkg, setCheckout, checkout}){
 
     //creat fuction to remove package from checkout
     const removepkg = () => {
         setCheckout(current =>
           current.filter(pkgs => {
-            // 👇️ remove object that has id equal to 2
+            // returns all pkgs that are not pkg.
             return pkgs !== pkg;
           }),
         );
       };
 
->>>>>>> 937047475a50efa741b1c90beca034e2816a7fd1
     return(
         <>
         <div style={{'background': `url(${pkg.location_img}) no-repeat center center`, 'WebkitBackgroundSize': '300px'}}className="card-banner">       
