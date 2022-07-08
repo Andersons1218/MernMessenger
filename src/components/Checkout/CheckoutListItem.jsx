@@ -1,7 +1,10 @@
-export default function CheckoutListItem(){
+export default function CheckoutListItem({pkg}){
     return(
         <>
-        <h1>CheckoutListItem</h1>
-        </>
+        <div>
+        <h1>{pkg.location}</h1>
+        <h2>{pkg.persons}</h2>
+        </div>
+        </>    
     )
 }

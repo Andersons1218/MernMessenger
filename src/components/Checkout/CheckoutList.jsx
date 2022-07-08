@@ -1,10 +1,11 @@
 import CheckoutListItem from "./CheckoutListItem";
 
-export default function CheckoutList() {
+export default function CheckoutList({checkout}) {
     return(
         <>
-        <h1>Package</h1>
-        <CheckoutListItem />
+    { checkout.map(pkg => {
+      return <CheckoutListItem key={pkg._id} pkg={pkg} />
+    })}
         </>
     )
 }

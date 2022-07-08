@@ -1,11 +1,12 @@
 import CheckoutList from '../../components/Checkout/CheckoutList'
+import CheckoutTotal from '../../components/Checkout/CheckoutTotal'
 import * as userService from '../../utilities/users-service'
 
 export default function CheckoutPage({checkout}) {
 
     function showCheckout() {
         checkout.map((item) => {
-            console.log(`Here are the Packages you ordered: ${item._id}.`)
+          return console.log(`Here are the Packages you ordered: ${item._id}.`)
         })
     }
 
@@ -16,15 +17,13 @@ export default function CheckoutPage({checkout}) {
     }
 
     return(
-        <>
-    <h1> Order History </h1>
 
+    <main style={{display: 'flex', flexFlow: 'row-nowrap', width: '100vw', justifyContent: 'space-between'}}className="CheckoutPage">
     
-    <button onClick={showCheckout}> Check The Status of Cart </button>
-
-    <button onClick={handleCheckToken}> Check when my account Expires </button>
-    <CheckoutList />
-
-    </>
+    <CheckoutList checkout={checkout} />
+    <aside>
+        <CheckoutTotal />
+    </aside>
+    </main>
     )
 }
