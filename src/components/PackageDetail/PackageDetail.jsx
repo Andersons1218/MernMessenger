@@ -1,8 +1,8 @@
 import { useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import WeatherDay from '../WeatherDay/WeatherDay'
+import '../../index.css'
 
-// import WeatherApi from '../../components/WeatherApi/WeatherApi'
 
 
 export default function PackageDetail({userPackage, addNewPackages, setCheckout}) {
@@ -19,7 +19,7 @@ export default function PackageDetail({userPackage, addNewPackages, setCheckout}
 
    event.preventDefault();
    setPackageAppend({ ...userPackage, persons: selectedPersons.persons });
-   //  console.log(packageAppend)
+    // console.log(packageAppend)
    addNewPackages(packageAppend);
    setSelectedPersons({ persons: 1 });
  }
@@ -78,13 +78,13 @@ console.log(packageAppend)
  
  // This is logic to handle the setting of 'checkout' state.
  return (  
-     <>
+     <div className='grid justify-items-center'>
      <button onClick={checkoutTest}>Testing checkout state</button>
      <h1>Package Details:</h1><br/>
-      <img src={userPackage.location_img} />
+      <img src={userPackage.location_img} width="550px" />
      <h2>{userPackage.location}</h2>
      <div>
-        <div>
+        <div className="flex justify-start" >
             {!!weather && weather.map((i, index) => (
                 <div key={index}>
                     <WeatherDay
@@ -108,9 +108,9 @@ console.log(packageAppend)
      </ul><br />
       <div className="gallery">
       <h1>Gallery:</h1>
-      <img src={userPackage.hotel_img} />
-      <img src={userPackage.flight_img} />
-      <img src={userPackage.car_img} />
+      <img src={userPackage.hotel_img} width="550px"/>
+      <img src={userPackage.flight_img} width="550px"/>
+      <img src={userPackage.car_img} width="550px"/>
       </div>
       <div className="package-add" onSubmit={submitCheckout}>
         <form action="">
@@ -125,6 +125,6 @@ console.log(packageAppend)
       <button type="submit">Add Package</button>
         </form>
       </div>
-    </> 
+    </div> 
     );
 }
