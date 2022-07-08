@@ -1,20 +1,20 @@
 import { useParams } from 'react-router-dom'
 import { useState } from 'react'
-export default function PackageDetail({userPackage, addNewPackages, setCheckout}) {
 
+import WeatherApi from '../../components/WeatherApi/WeatherApi'
+export default function PackageDetail({userPackage, addNewPackages, setCheckout}) {
 // Passing the selected user package as state into packageAppend.
- const [packageAppend, setPackageAppend] = useState([userPackage])
+ const [packageAppend, setPackageAppend] = useState({})
  const [selectedPersons, setSelectedPersons] = useState([])
 
+
  function submitCheckout(event) {
- event.preventDefault();
-  const personsAppend = {
-    ...packageAppend,
-    selectedPersons
-  }
-  console.log(personsAppend)
-  // addNewPackages(personsAppend)
-  // setSelectedPersons({ persons: 1 })
+
+   event.preventDefault();
+   setPackageAppend({ ...userPackage, persons: selectedPersons.persons });
+   //  console.log(packageAppend)
+   addNewPackages(packageAppend);
+   setSelectedPersons({ persons: 1 });
  }
 
  function handlePersonsChange(event) {
@@ -42,6 +42,7 @@ console.log(packageAppend)
      <h1>Package Details:</h1><br/>
       <img src={userPackage.location_img} />
      <h2>{userPackage.location}</h2>
+     <div><WeatherApi /></div>
      <ul>
       <li>{userPackage.rating}</li>
       <li>{userPackage.hotel}</li>
