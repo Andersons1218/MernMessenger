@@ -1,4 +1,4 @@
-import './NavBar.css'
+import '../index.css'
 import { Link } from 'react-router-dom'
 import * as userService from '../utilities/users-service'
 
@@ -11,7 +11,7 @@ export default function NavBar({ user, setUser }) {
   setUser(null)
 }
     return(
-        <nav>
+        <nav >
             <Link to="/packages">Booking</Link>
             &nbsp; | &nbsp;
             <Link to="/checkout">Check out</Link>
