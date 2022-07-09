@@ -33,8 +33,7 @@ const packages = await Package.create ([
     weatherKey: '182536',
     location_img:
       "https://cdn.britannica.com/61/179661-138-6F13E02A/Overview-Athens.jpg?w=800&h=450&c=crop",
-    hotel_img:
-      "https://media.hrs.com/media/image/9b/23/89/San_Juan_Marriott_Resort_Stellaris_Casino-San_Juan-Aussenansicht-4-53229_1280x1280.jpg",
+    hotel_img:"ttps://passportsfromtheheart.com/wp-content/uploads/2018/10/Pink_Ribbon-Hilton-Athens-.jpg",
     flight_img: "https://s3-symbol-logo.tradingview.com/jetblue--600.png",
     car_img:
       "https://dd5394a0b8ca8e97ba29-abf76f3d91a2125517d6c7c409f095c7.ssl.cf1.rackcdn.com/content/common/Models/2022/5349b203-c7d5-4a9b-bca6-255e5c783449.png",
@@ -51,7 +50,7 @@ const packages = await Package.create ([
     location_img:
       "https://indiacsr.in/wp-content/uploads/2022/04/Ambassador-of-India-to-Japan-emphasized-the-need-to-further-enhance-the-strategic-partnership-of-both-the-countries.jpg",
     hotel_img:
-      "https://passportsfromtheheart.com/wp-content/uploads/2018/10/Pink_Ribbon-Hilton-Athens-.jpg",
+      "https://www.aman.com/sites/default/files/2021-08/aman-tokyo-deluxe-l.jpg",
     flight_img:
       "https://www.portseattle.org/sites/default/files/airline-logo/2019-03/JAL-logo.jpg",
     car_img: "https://www.jrailpass.com/images/prices/jr-pass-product.jpg",
