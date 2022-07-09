@@ -8,7 +8,7 @@ import '../../index.css'
 export default function PackageDetail({userPackage, addNewPackages, setCheckout}) {
 // Passing the selected user package as state into packageAppend.
  const [packageAppend, setPackageAppend] = useState({})
- const [selectedPersons, setSelectedPersons] = useState([])
+ const [selectedPersons, setSelectedPersons] = useState({persons: 1})
  // weather api state
  const [weather, setWeather] = useState();
 
