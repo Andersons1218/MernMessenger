@@ -1,6 +1,7 @@
 const User = require('../../models/user')
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt');
+const Profile = require('../../models/profile')
 
 module.exports = {
     create,
@@ -20,6 +21,27 @@ async function login(req, res) {
     }
   }
 async function create(req, res) {
+    try {
+      console.log(req.body)
+      // Add the user to the database
+      const user = await User.create(req.body);
+      const profile = await Profile.create({user: user._id})
+      user.profile = profile._id
+      user.save()
+      console.log(user)
+      // token will be a string
+      // const token = createJWT(user);
+      // Yes, we can use res.json to send back just a string
+      // The client code needs to take this into consideration
+      // res.json(token);
+    } catch (err) {
+      // Client will check for non-2xx status code 
+      // 400 = Bad Request
+      res.status(400).json(err);
+    }
+  }
+
+async function updateOrder(req, res) {
     try {
       // Add the user to the database
       const user = await User.create(req.body);
