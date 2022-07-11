@@ -14,6 +14,7 @@ export default function CheckoutListItem({pkg, setCheckout, checkout}){
 
     return(
         <>
+
       <div className="grid ml-40 ">
         <div class="max-w-sm rounded overflow-hidden shadow-lg">
         <img class="w-full" src={pkg.location_img} />
@@ -26,6 +27,7 @@ export default function CheckoutListItem({pkg, setCheckout, checkout}){
           <h2>Quantity: {pkg.persons}</h2>
           </p>
         </div>
+
         </div>
       </div>
         </>    

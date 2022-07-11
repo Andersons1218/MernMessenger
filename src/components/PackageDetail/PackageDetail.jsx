@@ -43,14 +43,16 @@ export default function PackageDetail({userPackage, addNewPackages, setCheckout}
     const requestURL = `http://dataservice.accuweather.com/forecasts/v1/daily/5day/${cityId}?apikey=${accuKey}`
 
 const padNum = (num) => {
+
     const stringNum = num + '';
     const stringLength = stringNum.length;
 
     if (stringLength === 1) {
-        return '0' + stringNum;
+      return '0' + stringNum;
     } else {
-        return stringNum
+      return stringNum
     }
+
 }
 
     useEffect(() => {
@@ -86,6 +88,7 @@ console.log(packageAppend)
         <h1 className='flex mt-6 underline text-2xl'>This package includes a trip to...</h1>
         <h2 className='my-6 uppercase text text-4xl'>{userPackage.location}</h2>
         <ul className='my-2'>
+        
           <li className='flex mt-6 underline text-2xl'>Stay</li>
           <li className='flex text-2xl my-2'>{userPackage.hotel} {userPackage.rating}</li>
           <li className='flex text-left'>{userPackage.description}</li>
@@ -102,19 +105,19 @@ console.log(packageAppend)
      </div>
      <div>
       <div>5 Day Forecast</div>
-        <div className="py-4" >
-            {!!weather && weather.map((i, index) => (
-                <div key={index}>
-                    <WeatherDay
-                        min={i.min}
-                        max={i.max}
-                        weatherType={i.weatherType}
-                        weatherIcon={i.weatherIcon}
-                        date={i.date} 
-                    />
 
-                </div>
-            ))}
+        <div className="py-4" >
+          {!!weather && weather.map((i, index) => (
+            <div key={index}>
+              <WeatherDay
+                min={i.min}
+                max={i.max}
+                weatherType={i.weatherType}
+                weatherIcon={i.weatherIcon}
+                date={i.date}
+              />
+            </div>
+          ))}
         </div>
       </div>
     <div>   
@@ -133,6 +136,7 @@ console.log(packageAppend)
         <option value={5}>5</option>
       </select>
       <button className='px-4 ring-offset-2 ring-2 hover:ring-4 rounded-md ring-blue-500' type="submit">Add Package</button>
+
         </form>
  
 
@@ -153,3 +157,4 @@ console.log(packageAppend)
     </div> 
     );
 }
+
