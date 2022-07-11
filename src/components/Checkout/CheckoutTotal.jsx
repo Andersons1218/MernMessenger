@@ -1,7 +1,5 @@
-export default function CheckoutTotal({addToProf, pkg, checkout}){
-    const addTotalPgk = () => {
-    const total = pkg.price + pkg.persons
-    }
+export default function CheckoutTotal({addToProf, checkout}){
+  
     
 
     return (
