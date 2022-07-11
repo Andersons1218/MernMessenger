@@ -142,12 +142,12 @@ console.log(packageAppend)
 
       </div>
       <div></div>
-     <div className='grid grid-cols-3 content-start mt-36 underline text-2xl space-x-4 '>Gallery:
+     <div className='grid grid-cols-3 content-start mt-36 underline text-2xl space-x- '>Gallery:
       <div></div>
       <div></div>
-      <div><img className='rounded-lg justify-self-' src={userPackage.hotel_img} width="550px"/></div>
-      <div><img className='rounded-lg' src={userPackage.car_img} width="550px" /></div>
-      <div><img className='rounded-lg' src={userPackage.flight_img} width="350px" /></div>
+      <div><img className='rounded-lg justify-self- hover:scale-150' src={userPackage.hotel_img} /></div>
+      <div><img className='rounded-lg hover:scale-150' src={userPackage.car_img}  /></div>
+      <div><img className='rounded-lg hover:scale-150' src={userPackage.flight_img}  /></div>
 
       
       
