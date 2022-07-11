@@ -25,7 +25,11 @@ export default function CheckoutListItem({pkg, setCheckout, checkout}){
           <h2>Flight: {pkg.flight}</h2>
           <h2>Car Rental: {pkg.car}</h2>
           <h2>Quantity: {pkg.persons}</h2>
+          <h2>Package Price: {pkg.price}</h2>
+          <h2>Total Price: {pkg.price*pkg.persons}</h2>
+
           </p>
+          <br />
           <button className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" onClick={removepkg}>Remove</button>
         </div>
 
