@@ -195,7 +195,7 @@ const packages = await Package.create ([
     date: "",
     car: "Rolls Royce Phantom",
     weatherKey: '300597',
-    description: "",
+    description: "Marina Bay Sands is located in Marina Bay, a neighborhood in Singapore. Gardens by the Bay and Singapore City Hall are cultural highlights, and travelers looking to shop may want to visit Orchard Road and Suntec City. Singapore Flyer and East Coast Park are not to be missed.",
     location_img:
       "https://cdn.britannica.com/55/190455-050-E617F64E/Night-view-Singapore.jpg",
     hotel_img:
