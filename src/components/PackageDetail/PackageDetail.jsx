@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, } from 'react'
+
 import WeatherDay from '../WeatherDay/WeatherDay'
 import '../../index.css'
 
@@ -18,6 +19,7 @@ export default function PackageDetail({userPackage, addNewPackages, setCheckout}
      event.preventDefault();   
      addNewPackages({ ...userPackage, persons: selectedPersons.persons });
      setSelectedPersons({ persons: 1 });
+     alert("Your Package was added to cart")
    }
 
 
@@ -78,23 +80,32 @@ console.log(packageAppend)
  
  // This is logic to handle the setting of 'checkout' state.
  return (  
-     <div className='grid grid-cols-2 justify-items-center font-display font-light '>
+     <div className='grid grid-cols-2 justify-items-center font-display font-light mr-20 ml-20'>
      {/* <button onClick={checkoutTest}>Testing checkout state</button> */}
-     <div className=""> // div 1
+     <div className="">
         <h1 className='flex underline text-2xl '>Package Details:</h1><br/>
         <img className='rounded-lg drop-shadow-2xl my-2' src={userPackage.location_img} width="550px" />
-        <h2 >{userPackage.location}</h2>
+        <h1 className='flex mt-6 underline text-2xl'>This package includes a trip to...</h1>
+        <h2 className='my-6 uppercase text text-4xl'>{userPackage.location}</h2>
         <ul className='my-2'>
-          <li >{userPackage.rating}</li>
-          <li className='my-2'>{userPackage.hotel}</li>
-          <li className='my-2'>{userPackage.flight}</li>
-          <li className='my-2'>{userPackage.price}</li>
-          <li className='my-2'>{userPackage.car}</li>
-
+        
+          <li className='flex mt-6 underline text-2xl'>Stay</li>
+          <li className='flex text-2xl my-2'>{userPackage.hotel} {userPackage.rating}</li>
+          <li className='flex text-left'>{userPackage.description}</li>
         </ul>
-      </div>
-      <div>
-        <div>5 Day Forecast</div>
+        <div className='mt-16'>
+          <div className='flex underline text-2xl'>Transportation</div>
+          <div className='flex my-6 uppercase text text-lg'>Airline: {userPackage.flight}</div>
+          <div className='flex my-6 uppercase text text-lg'>Rental: {userPackage.car}</div>
+        </div> 
+        <div className='my-2 box-border h-16 w-auto bg-amber-400 text-2xl'>Total Price {userPackage.price}
+        <div className=''>Book Now!</div>
+        </div>
+        
+     </div>
+     <div>
+      <div>5 Day Forecast</div>
+
         <div className="py-4" >
           {!!weather && weather.map((i, index) => (
             <div key={index}>
@@ -109,31 +120,41 @@ console.log(packageAppend)
           ))}
         </div>
       </div>
-      <div>
-      </div>
-      <br />
-      <div className="flex flex-col gallery rounded-lg">
-        <h1>Gallery:</h1>
-        <img className='rounded-lg' src={userPackage.hotel_img} width="550px" />
-        <img className='rounded-lg' src={userPackage.flight_img} width="200px" height="100px" />
-        <img className='rounded-lg' src={userPackage.car_img} width="550px" />
-      </div>
-      <div className="package-add" onSubmit={submitCheckout}>
+    <div>   
+    
+     </div>
+    
+     <div></div>
+     <div className="package-add mt-4 text-lg px-2" onSubmit={submitCheckout}>
         <form action="">
-          <label>How many travelers?:</label>
-          <div class="inline-block relative w-64">
-            <select class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-2 py-2 pr-4 rounded shadow leading-tight focus:outline-none focus:shadow-outline" name="persons" value={selectedPersons.persons} onChange={handlePersonsChange}>
-              <option value={1}>1</option>
-              <option value={2}>2</option>
-              <option value={3}>3</option>
-              <option value={4}>4</option>
-              <option value={5}>5</option>
-            </select>
-          </div>
-          <button class='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline' type="submit">Add Package</button>
+          <label className='px-2 '>Select How Many People:</label>
+        <select name="persons" className='px-8 mr-4 bg-slate-300 ring-1 ring-slate-800' value={selectedPersons.persons} onChange={handlePersonsChange}>
+        <option value={1}>1</option>
+        <option value={2}>2</option>
+        <option value={3}>3</option>
+        <option value={4}>4</option>
+        <option value={5}>5</option>
+      </select>
+      <button className='px-4 ring-offset-2 ring-2 hover:ring-4 rounded-md ring-blue-500' type="submit">Add Package</button>
+
         </form>
+ 
+
       </div>
-    </div>
-  );
+      <div></div>
+     <div className='grid grid-cols-3 content-start mt-36 underline text-2xl space-x-4 '>Gallery:
+      <div></div>
+      <div></div>
+      <div><img className='rounded-lg justify-self-' src={userPackage.hotel_img} width="550px"/></div>
+      <div><img className='rounded-lg' src={userPackage.car_img} width="550px" /></div>
+      <div><img className='rounded-lg' src={userPackage.flight_img} width="350px" /></div>
+
+      
+      
+      
+      </div>
+      
+    </div> 
+    );
 }
 
