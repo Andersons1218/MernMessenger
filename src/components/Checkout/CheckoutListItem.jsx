@@ -4,7 +4,7 @@ export default function CheckoutListItem({pkg, setCheckout, checkout}){
     const removepkg = () => {
         setCheckout(current =>
           current.filter(pkgs => {
-            // 👇️ remove object that has id equal to 2
+            // returns all pkgs that are not pkg.
             return pkgs !== pkg;
           }),
         );

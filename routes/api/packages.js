@@ -7,4 +7,6 @@ router.get('/', packCtrl.index);
 // GET /api/items/:id
 router.get('/:id', packCtrl.show);
 
+router.post('/addOrder', packCtrl.addOrder)
+
 module.exports = router;

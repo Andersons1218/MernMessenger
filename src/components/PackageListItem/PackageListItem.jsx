@@ -25,6 +25,7 @@ export default function PackageListItem({pkg, setUserPackage}) {
      <h1 class="font-sans md:text-center hover:uppercase">{pkg.location} <br></br> Starting:${pkg.price} </h1>
      
       </div>
+
      </>
     );
   }

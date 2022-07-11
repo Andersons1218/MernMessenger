@@ -11,15 +11,17 @@ export default function NavBar({ user, setUser }) {
   setUser(null)
 }
     return(
-        <div className='mb-8 box-border h-16 w-auto bg-amber-400 font-display font-light '>
-            <nav className='text-xl py-4'>
-                <Link to="/packages">Booking</Link>
+        <div className='mb-8 box-border h-16 w-auto bg-amber-400 font-display font-light'>
+            <nav className='text-xl py-4 flex '>
+                <h1 className='ml-4 mr-80'>Mern Travel Co.</h1>
+                <Link to="/packages" className='hover:text-2xl ml-32'>Booking</Link>
+
                 &nbsp; | &nbsp;
-                <Link to="/checkout">Check out</Link>
+                <Link to="/checkout" className='hover:text-2xl' >Check out</Link>
                 &nbsp; | &nbsp;
                 Welcome, { user.name }
                 &nbsp; | &nbsp;
-                <Link to="" onClick={handleLogOut}>Log out</Link>
+                <Link to="" onClick={handleLogOut} className='hover:text-2xl'>Log out</Link>
                 </nav>
         </div>
     )
