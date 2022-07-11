@@ -13,6 +13,8 @@ export default function App() {
   const [user, setUser] = useState(getUser())
   const [packages, setPackages] = useState([]);
   const [checkout, setCheckout] = useState([]);
+  
+  
   useEffect(function() {
     async function getItems() {
       const packages = await packageAPI.getAll();
@@ -20,7 +22,7 @@ export default function App() {
       // console.log(packages)
     }
     getItems();
-  }, []);
+  }, [user]);
 
   function addToCheckout(pkg) {
     setCheckout([...checkout, pkg]);
@@ -33,7 +35,7 @@ export default function App() {
           <NavBar user={user} setUser={setUser} />
           <Routes>
             <Route path="/packages" element={<BookingPage packages={packages} addNewPackages={addToCheckout}/>} />
-            <Route path="/checkout" element={<CheckoutPage checkout={checkout} setCheckout={setCheckout}/>} />
+            <Route path="/checkout" element={<CheckoutPage checkout={checkout} user={user} setCheckout={setCheckout}/>} />
             {/* <Route path="/packages/:id" element={<PackageDetail packages={packages}/>} /> */}
           </Routes>
       </>

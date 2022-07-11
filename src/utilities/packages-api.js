@@ -9,3 +9,8 @@ export function getAll() {
 export function getById(id) {
   return sendRequest(`${BASE_URL}/${id}`);
 }
+
+export function addToProfile(packages) {
+  console.log(packages)
+  return sendRequest(`${BASE_URL}/addOrder`, 'POST', packages)
+}

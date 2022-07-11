@@ -1,4 +1,4 @@
-export default function CheckoutTotal(){
+export default function CheckoutTotal({addToProf, checkout}){
     
     return (
         <>
@@ -9,7 +9,7 @@ export default function CheckoutTotal(){
                 <li>Package Three</li>
                 <li>Package Four</li>
             </ul>
-            <button>Submit Order</button>
+            <button onClick={addToProf}> Submit Order</button>
         </aside>
         </>    
     )

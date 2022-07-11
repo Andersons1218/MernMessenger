@@ -60,6 +60,7 @@ export function checkToken() {
         options.body = JSON.stringify(payload);
       } 
       const token = getToken();
+      console.log(token)
       if (token) {
         // Ensure the headers object exists
         options.headers = options.headers || {};

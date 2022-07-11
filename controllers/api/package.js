@@ -1,8 +1,10 @@
-const Package = require('../../models/package')
+const Package = require('../../models/package');
+const Profile = require('../../models/profile');
 
 module.exports = {
    index,
-  show
+  show,
+  addOrder
 };
 
 async function index(req, res) {
@@ -19,3 +21,14 @@ async function show(req, res) {
   const package = await Package.findById(req.params.id);
   res.json(package);
 }
+
+async function addOrder(req, res) {
+  const profile = await Profile.findById(req.body.profileid).populate('user')
+  req.body.checkout.forEach((booking) => {
+    profile.bookings.push(booking)
+  })
+  profile.save()
+  console.log(profile)
+  
+}
+
