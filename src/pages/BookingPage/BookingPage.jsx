@@ -9,6 +9,7 @@ import * as ordersAPI from '../../utilities/orders-api';
 
 
 
+
 export default function BookingPage({ user, setUser, packages, addNewPackages, setCheckout }){
   const [activeCat, setActiveCat] = useState('');
   const [cart, setCart] = useState(null);

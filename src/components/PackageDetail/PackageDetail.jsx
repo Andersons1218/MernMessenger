@@ -76,15 +76,18 @@ console.log(packageAppend)
  
  // This is logic to handle the setting of 'checkout' state.
  return (  
-     <div className='grid grid-cols-2 justify-items-center font-display font-light '>
+     <div className='grid grid-cols-2 justify-items-center font-display font-light mr-20 ml-20'>
      {/* <button onClick={checkoutTest}>Testing checkout state</button> */}
      <div className=""> // div 1
         <h1 className='flex underline text-2xl '>Package Details:</h1><br/>
         <img className='rounded-lg drop-shadow-2xl my-2' src={userPackage.location_img} width="550px" />
-        <h2 >{userPackage.location}</h2>
+        <h1 className='flex mt-6 underline text-2xl'>This package includes a trip to...</h1>
+        <h2 className='my-6 uppercase text text-4xl'>{userPackage.location}</h2>
         <ul className='my-2'>
-          <li >{userPackage.rating}</li>
+          <li className='flex mt-6 underline text-2xl'>Stay</li>
           <li className='my-2'>{userPackage.hotel}</li>
+          <li>{userPackage.description}</li>
+          <li >{userPackage.rating}</li>
           <li className='my-2'>{userPackage.flight}</li>
           <li className='my-2'>{userPackage.price}</li>
           <li className='my-2'>{userPackage.car}</li>
