@@ -19,7 +19,7 @@ export default function PackageListItem({pkg, setUserPackage}) {
     
     <>
     <br></br>
-    <div className='hover:bg-gradient-to-r from-blue-500 to-transparent cursor-pointer'>
+    <div className='hover:bg-gradient-to-r from-blue-500 to-transparent cursor-pointer ml-8 shadow-md border border-slate-200'>
     <div style={{'background': `url(${pkg.location_img}) no-repeat center center`, 'WebkitBackgroundSize': '200px', width: "200px", height: '50px'}} onClick={setNewPkgState} className='pkgBox'>
    </div>
      <h1 class="font-sans md:text-center hover:uppercase">{pkg.location} <br></br> Starting:${pkg.price} </h1>
