@@ -15,6 +15,7 @@ export default function NavBar({ user, setUser }) {
             <nav className='text-xl py-4 flex '>
                 <h1 className='ml-4 mr-80'>Mern Travel Co.</h1>
                 <Link to="/packages" className='hover:text-2xl ml-32'>Booking</Link>
+
                 &nbsp; | &nbsp;
                 <Link to="/checkout" className='hover:text-2xl' >Check out</Link>
                 &nbsp; | &nbsp;
