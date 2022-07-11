@@ -20,7 +20,7 @@ export default function CheckoutPage({checkout, setCheckout, user}) {
 
     function addPackageToProfile() {
         packagesAPI.addToProfile({checkout: checkout, profileid: user.profile})
-        alert("Your Package was added to cart")
+        alert("Congrats! Your Order Was Purchased")
        }
 
     return(
