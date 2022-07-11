@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, } from 'react'
+
 import WeatherDay from '../WeatherDay/WeatherDay'
 import '../../index.css'
 
@@ -18,6 +19,7 @@ export default function PackageDetail({userPackage, addNewPackages, setCheckout}
      event.preventDefault();   
      addNewPackages({ ...userPackage, persons: selectedPersons.persons });
      setSelectedPersons({ persons: 1 });
+     alert("Your Package was added to cart")
    }
 
 
@@ -93,7 +95,9 @@ console.log(packageAppend)
           <div className='flex my-6 uppercase text text-lg'>Airline: {userPackage.flight}</div>
           <div className='flex my-6 uppercase text text-lg'>Rental: {userPackage.car}</div>
         </div> 
-        <div className='my-2'>{userPackage.price}</div>
+        <div className='my-2 box-border h-16 w-auto bg-amber-400 text-2xl'>Total Price {userPackage.price}
+        <div className=''>Book Now!</div>
+        </div>
         
      </div>
      <div>
@@ -116,21 +120,24 @@ console.log(packageAppend)
     <div>   
     
      </div>
-     <br />
-     <div className="package-add" onSubmit={submitCheckout}>
+    
+     <div></div>
+     <div className="package-add mt-4 text-lg px-2" onSubmit={submitCheckout}>
         <form action="">
-          <label>For How Many People?:</label>
-        <select name="persons" value={selectedPersons.persons} onChange={handlePersonsChange}>
+          <label className='px-2 '>Select How Many People:</label>
+        <select name="persons" className='px-8 mr-4 bg-slate-300 ring-1 ring-slate-800' value={selectedPersons.persons} onChange={handlePersonsChange}>
         <option value={1}>1</option>
         <option value={2}>2</option>
         <option value={3}>3</option>
         <option value={4}>4</option>
         <option value={5}>5</option>
       </select>
-      <button type="submit">Add Package</button>
+      <button className='px-4 ring-offset-2 ring-2 hover:ring-4 rounded-md ring-blue-500' type="submit">Add Package</button>
         </form>
+ 
+
       </div>
-      <div></div> 
+      <div></div>
      <div className='grid grid-cols-3 content-start mt-36 underline text-2xl space-x-4 '>Gallery:
       <div></div>
       <div></div>
