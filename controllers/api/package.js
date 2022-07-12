@@ -1,5 +1,5 @@
 const Package = require('../../models/package');
-const Profile = require('../../models/profile');
+const Profile = require('../../models/Profile');
 
 module.exports = {
    index,
